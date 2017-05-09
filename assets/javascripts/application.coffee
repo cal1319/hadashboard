@@ -33,3 +33,10 @@ Dashing.on 'ready', ->
 		 
   Batman.Filters.fixed = (num, f) ->
     return parseFloat(num).toFixed(f)
+
+  Batman.Filters.shortenedWattage = (num) ->
+    return num if isNaN(num)
+    if num >= 1000
+      (num / 1000).toFixed(1) + 'kW'
+    else
+      num + 'W'

@@ -6,14 +6,6 @@ class Dashing.Stmeter extends Dashing.Widget
       $(@node).find(".stmeter").val(power).trigger('change')
   
   @accessor 'power', Dashing.AnimatedValue
-
-  @accessor 'instantaneousPower', ->
-    p = @get('power')      
-    if p >= 1000
-      p = (p / 1000).toFixed(1)
-      "#{p}kW"      	
-    else
-      "#{p}W"
  
   @accessor 'totalizedEnergy', ->
     e = @get('energy')
