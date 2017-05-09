@@ -11,7 +11,7 @@ class Dashing.Stmeter extends Dashing.Widget
       p = (p / 1000).toFixed(1)
       "#{p}kW"      	
     else
-      #{p}W	
+      "#{p}W"
  
   @accessor 'totalizedEnergy', ->
     e = @get('energy')
