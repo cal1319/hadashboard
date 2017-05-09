@@ -7,7 +7,7 @@ class Dashing.Stmeter extends Dashing.Widget
   
   @accessor 'power', Dashing.AnimatedValue
 
-  @accessor 'instantaneousPower', Dashing.AnimatedValue, ->
+  @accessor 'instantaneousPower', ->
     p = @get('power')      
     if p >= 1000
       p = (p / 1000).toFixed(1)
