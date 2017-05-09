@@ -2,8 +2,8 @@ class Dashing.Stmeter extends Dashing.Widget
   constructor: ->
     super
     @queryState()
-    @observe 'power', (power) ->
-      $(@node).find(".stmeter").val(power).trigger('change')
+    @observe 'instantaneousPower', (instantaneousPower) ->
+      $(@node).find(".stmeter").val(instantaneousPower).trigger('change')
   
   @accessor 'power', Dashing.AnimatedValue
 
