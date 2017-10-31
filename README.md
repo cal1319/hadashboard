@@ -10,7 +10,7 @@ Download and install the [Heroku Toolbelt](https://toolbelt.heroku.com) on your 
 Clone the **hadashboard** repository to the current local directory on your machine.
 
 ``` bash
-$ git clone https://github.com/FlorianZ/hadashboard.git
+$ git clone https://github.com/bmmiller/hadashboard.git
 ```
 
 Change your working directory to the repository root. Moving forward, we will be working from this directory.
@@ -39,29 +39,25 @@ $ heroku login
 Enter your Heroku credentials.
 Email: your@email.com
 Password: 
-Could not find an existing public key.
-Would you like to generate one? [Yn] 
-Generating new SSH public key.
-Uploading ssh public key /Users/user/.ssh/id_rsa.pub
+Logged in as your@email.com
 ```
 
 Now, we will create a new Heroku app. Make sure you are still in the repository root directory (*hadashboard*) from step 2.
 
 ``` bash
-$ heroku create
-Creating your-app-name... done, stack is cedar
-http://your-app-name.herokuapp.com/ | git@heroku.com:your-app-name.git
-Git remote heroku added
+$ heroku create your-app-name
+Creating your-app-name... done
+https://your-app-name.herokuapp.com/ | https://git.heroku.com:your-app-name.git
 ```
 
 This will create a new web app with a random name. The name will be output to the terminal. Take note of it. If you don't like the name, don't worry: You can [rename your app](https://devcenter.heroku.com/articles/renaming-apps) at any time using the Heroku CLI or web interface.
 
-Your new app will later be reachable at **http://*your-app-name*.herokuapp.com**. We have not deployed your app yet, and before we do we will need to make sure that only you have access to your dashboard, and set up a few **Config Variables**:
+Your new app will later be reachable at **https://*your-app-name*.herokuapp.com**. We have not deployed your app yet, and before we do we will need to make sure that only you have access to your dashboard, and set up a few **Config Variables**:
 
 To make sure that your dashboard is not publicly viewable, and that only you have access to it, the hadashboard code is set up to use your Heroku credentials (from step 1) for authentication. It uses OAuth to verify your identity, so we must grant the hadashboard client OAuth access. To do so, install the heroku-oauth CLI plugin:
 
 ``` bash
-$ heroku plugins:install https://github.com/heroku/heroku-oauth
+$ heroku plugins:install heroku-cli-oauth
 Installing heroku-oauth... done
 ```
 
