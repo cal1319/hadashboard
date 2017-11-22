@@ -1,4 +1,4 @@
-class Dashing.Stpresence extends Dashing.Widget
+class Dashing.Stpresencechris extends Dashing.Widget
   constructor: ->
     super
     @queryState()
