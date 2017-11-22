@@ -23,11 +23,6 @@ class Dashing.Stswitchgarage extends Dashing.Widget
   @accessor 'icon-style', ->
     if @get('state') == 'on' then 'switch-icon-on' else 'switch-icon-off'    
 
-  toggleState: ->
-    newState = if @get('state') == 'on' then 'off' else 'on'
-    @set 'state', newState
-    return newState
-
   queryState: ->
     $.get '/smartthings/dispatch',
       widgetId: @get('id'),
@@ -37,18 +32,7 @@ class Dashing.Stswitchgarage extends Dashing.Widget
         json = JSON.parse data
         @set 'state', json.switch
 
-  postState: ->
-    newState = @toggleState()
-    $.post '/smartthings/dispatch',
-      deviceType: 'switch',
-      deviceId: @get('device'),
-      command: newState,
-      (data) =>
-        json = JSON.parse data
-        if json.error != 0
-          @toggleState()
-
   ready: ->
 
-  onClick: (event) ->
-    @postState()
+  onData: (data) ->
+ 
