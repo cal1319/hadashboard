@@ -1,41 +1,46 @@
-class Dashing.Stgarage extends Dashing.ClickableWidget
+class Dashing.Stswitch extends Dashing.ClickableWidget
   constructor: ->
     super
     @queryState()
 
   @accessor 'state',
-    get: -> @_state ? 'open'
+    get: -> @_state ? 'off'
     set: (key, value) -> @_state = value
 
   @accessor 'icon',
-    get: -> 'car'
+    get: -> if @['icon'] then @['icon'] else
+      if @get('state') == 'on' then @get('iconon') else @get('iconoff')
+    set: Batman.Property.defaultAccessor.set
+
+  @accessor 'iconon',
+    get: -> @['iconon'] ? 'circle'
+    set: Batman.Property.defaultAccessor.set
+
+  @accessor 'iconoff',
+    get: -> @['iconoff'] ? 'circle-thin'
     set: Batman.Property.defaultAccessor.set
 
   @accessor 'icon-style', ->
-    if @get('state') == 'open' then icon = 'icon-open'
-    if @get('state') == 'closed' then icon = 'icon-closed'
-    if @get('state') == 'opening' then icon = 'icon-opening'
-    if @get('state') == 'closing' then icon = 'icon-closing'
-    return icon
+    if @get('state') == 'on' then 'switch-icon-on' else 'switch-icon-off'    
 
   toggleState: ->
-    newState = if @get('state') == 'open' then 'close' else 'open'
+    newState = if @get('state') == 'on' then 'off' else 'on'
     @set 'state', newState
     return newState
 
   queryState: ->
     $.get '/smartthings/dispatch',
       widgetId: @get('id'),
-      deviceType: 'garage',
+      deviceType: 'switch',
       deviceId: @get('device')
       (data) =>
         json = JSON.parse data
-        @set 'state', json.state
+        @set 'state', json.switch
 
   postState: ->
     newState = @toggleState()
     $.post '/smartthings/dispatch',
-      deviceType: 'garage',
+      deviceType: 'switch',
       deviceId: @get('device'),
       command: newState,
       (data) =>
@@ -44,8 +49,6 @@ class Dashing.Stgarage extends Dashing.ClickableWidget
           @toggleState()
 
   ready: ->
-
-  onData: (data) ->
 
   onClick: (event) ->
     @postState()

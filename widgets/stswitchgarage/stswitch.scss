@@ -1,24 +1,20 @@
 // ----------------------------------------------------------------------------
-// Widget-stgarage styles
+// Widget styles
 // ----------------------------------------------------------------------------
 @import "/app/assets/stylesheets/themes/current.scss";
 
-.widget-stgarage {
+.widget-stswitch {
 
   background-color: $background-color-action !important;
-
-  .icon-open {
-  	color: #ff00aa;
+  
+  .switch-icon-off .switch-icon-on {
+    font-size: 150%;
   }
-  .icon-opening {
-  	color: #ffff00;
+  .switch-icon-off {
+    color: #888888;
   }
-  .icon-closing {
-  	color: #ffff00;
+  .switch-icon-on {
+  	color: #aaff00;
   }
-
-  .icon-closed {
-  	color: #888888;
-  }
-
+  
 }
