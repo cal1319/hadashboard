@@ -1,4 +1,4 @@
-class Dashing.Stswitch extends Dashing.ClickableWidget
+class Dashing.Stswitchnight extends Dashing.ClickableWidget
   constructor: ->
     super
     @queryState()
