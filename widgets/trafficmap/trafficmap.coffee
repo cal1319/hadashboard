@@ -4,17 +4,17 @@ class Dashing.Trafficmap extends Dashing.Widget
     $(@node).removeClass('widget')
     if  $(@node).data('zoom')
       zoom =  $(@node).data('zoom')
+      lat  = $(@node).data('lat')
+      long = $(@node).data('long')
     else
       zoom = 13
     options =
       zoom: zoom
       center: {lat: lat, lng: long }
-      disableDefaultUI: true
-      draggable: true
+      disableDefaultUI: false
+      draggable: false
       scrollwheel: false
-      disableDoubleClickZoom: false
-     
-      
+      disableDoubleClickZoom: true
 
     @map = new google.maps.Map $(@node)[0], options
     @traffic = new google.maps.TrafficLayer
