@@ -8,7 +8,7 @@ class Dashing.Trafficmap extends Dashing.Widget
       zoom = 13
     options =
       zoom: zoom
-      center: {lat: 38.531168, lng: -121.745931 }
+      center: {lat: lat, lng: long }
       disableDefaultUI: true
       draggable: true
       scrollwheel: false
