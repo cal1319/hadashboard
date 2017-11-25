@@ -14,8 +14,8 @@ class Dashing.Trafficmap extends Dashing.Widget
       disableDefaultUI: true
       draggable: true
       scrollwheel: false
-      disableDoubleClickZoom: true
-      gestureHandling: greedy
+      disableDoubleClickZoom: false
+     
       
 
     @map = new google.maps.Map $(@node)[0], options
