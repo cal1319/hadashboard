@@ -1,21 +1,21 @@
-class Dashing.Sthumidity extends Dashing.Widget
-  constructor: ->
-    super
-    @queryState()
-
-  @accessor 'value',
-    get: -> if @_value then Math.floor(@_value) else 0
-    set: (key, value) -> @_value = value
-
-  queryState: ->
-    $.get '/smartthings/dispatch',
-      widgetId: @get('id'),
-      deviceType: 'humidity',
-      deviceId: @get('device')
-      (data) =>
-        json = JSON.parse data
-        @set 'value', json.value
+class Dashing.Trafficmap extends Dashing.Widget
 
   ready: ->
+    $(@node).removeClass('widget')
+    if  $(@node).data('zoom')
+      zoom =  $(@node).data('zoom')
+      lat  = $(@node).data('lat')
+      long = $(@node).data('long')
+    else
+      zoom = 13
+    options =
+      zoom: zoom
+      center: new google.maps.LatLng(lat,long)
+      disableDefaultUI: true
+      draggable: false
+      scrollwheel: false
+      disableDoubleClickZoom: true
 
-  onData: (data) ->
+    @map = new google.maps.Map $(@node)[0], options
+    @traffic = new google.maps.TrafficLayer
+    @traffic.setMap(@map)
