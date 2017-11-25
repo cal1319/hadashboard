@@ -4,13 +4,11 @@ class Dashing.Trafficmap extends Dashing.Widget
     $(@node).removeClass('widget')
     if  $(@node).data('zoom')
       zoom =  $(@node).data('zoom')
-      lat  = $(@node).data('lat')
-      long = $(@node).data('long')
     else
       zoom = 13
     options =
       zoom: zoom
-      center: {lat: lat, lng: long }
+      center: {lat: 38.531168, lng: -121.745931 }
       disableDefaultUI: true
       draggable: true
       scrollwheel: false
