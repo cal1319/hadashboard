@@ -1,1 +1,1 @@
-class Dashing.Text extends Dashing.Widget
+class Dashing.Spotify extends Dashing.Widget
