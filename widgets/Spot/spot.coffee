@@ -1,4 +1,4 @@
-class Dashing.Stswitchcool extends Dashing.ClickableWidget
+class Dashing.Spot extends Dashing.ClickableWidget
   constructor: ->
     super
     @queryState()
@@ -28,25 +28,6 @@ class Dashing.Stswitchcool extends Dashing.ClickableWidget
     @set 'state', newState
     return newState
 
-  queryState: ->
-    $.get '/smartthings/dispatch',
-      widgetId: @get('id'),
-      deviceType: 'switch',
-      deviceId: @get('device')
-      (data) =>
-        json = JSON.parse data
-        @set 'state', json.switch
-
-  postState: ->
-    newState = @toggleState()
-    $.post '/smartthings/dispatch',
-      deviceType: 'switch',
-      deviceId: @get('device'),
-      command: newState,
-      (data) =>
-        json = JSON.parse data
-        if json.error != 0
-          @toggleState()
 
   ready: ->
 
