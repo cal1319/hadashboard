@@ -31,5 +31,4 @@ class Dashing.Spot extends Dashing.ClickableWidget
 
   ready: ->
 
-  onClick: (event) ->
-    @postState()
+ 
