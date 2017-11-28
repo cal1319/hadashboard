@@ -18,7 +18,6 @@ class Dashing.Trafficmap extends Dashing.Widget
       disableDoubleClickZoom: false
       
   
-    @map = new google.maps.Map.event.trigger(maps, 'resize')
     @map = new google.maps.Map $(@node)[0], options, 
     @traffic = new google.maps.TrafficLayer
     @traffic.setMap(@map)
