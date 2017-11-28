@@ -17,10 +17,11 @@ class Dashing.Trafficmap extends Dashing.Widget
       scrollwheel: false
       disableDoubleClickZoom: false
       
-  google.maps.event.addListenerOnce map, 'idle', ->
-  google.maps.event.trigger map, 'resize'
+  
+  
       
  
     @map = new google.maps.Map $(@node)[0], options
+    @map = new google.maps.event.trigger map, 'resize'
     @traffic = new google.maps.TrafficLayer
     @traffic.setMap(@map)
