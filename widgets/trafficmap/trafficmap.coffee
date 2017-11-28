@@ -9,6 +9,7 @@ class Dashing.Trafficmap extends Dashing.Widget
     else
       zoom = 13
     options =
+      resize: true
       zoom: zoom
       center: {lat: lat, lng: long }
       disableDefaultUI: false
@@ -16,7 +17,7 @@ class Dashing.Trafficmap extends Dashing.Widget
       scrollwheel: false
       disableDoubleClickZoom: false
       
-    @map = google.maps.event.trigger(map, 'resize')
+ 
     @map = new google.maps.Map $(@node)[0], options
     @traffic = new google.maps.TrafficLayer
     @traffic.setMap(@map)
