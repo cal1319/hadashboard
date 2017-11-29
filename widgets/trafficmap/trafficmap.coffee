@@ -9,8 +9,6 @@ class Dashing.Trafficmap extends Dashing.Widget
     else
       zoom = 13
     options =
-      visibility: hidden
-      resize: true
       zoom: zoom
       center: {lat: lat, lng: long }
       disableDefaultUI: false
