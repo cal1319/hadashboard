@@ -30,8 +30,9 @@ class Dashing.Stdimmer extends Dashing.ClickableWidget
   @accessor 'stateInverse', ->
     if @get('state') == 'on' then 'off' else 'on'
 
-  setLevel: ->
-    @_level = event.target.value
+  setLevel: (e) ->
+    if (!e) then e = windows.event
+    @_level = e.target.value
     $.post '/smartthings/dispatch',
       deviceType: 'dimmer/level',
       deviceId: @get('device'),
