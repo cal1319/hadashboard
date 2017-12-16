@@ -25,43 +25,21 @@ class Dashing.Stdimmer extends Dashing.ClickableWidget
     set: Batman.Property.defaultAccessor.set
 
   @accessor 'icon-style', ->
-    if @get('state') == 'on' then 'dimmer-icon-on' else 'dimmer-icon-off'
+    if @get('state') == 'on' then 'switch-icon-on' else 'switch-icon-off'
     
   @accessor 'stateInverse', ->
     if @get('state') == 'on' then 'off' else 'on'
-
-  plusLevel: ->
-    newLevel = parseInt(@get('level'))+10
-    if newLevel > 100
-      newLevel = 100
-    @set 'level', newLevel
-    return @get('level')
-
-  minusLevel: ->
-    newLevel = parseInt(@get('level'))-10
-    if newLevel < 0
-      newLevel = 0
-    @set 'level', newLevel
-    return @get('level')
-
-  levelUp: ->
-    newLevel = @plusLevel()
+    
+  setLevel: (e) ->  
+    if (!e) then e = windows.event
+    @_level = e.target.value
     $.post '/smartthings/dispatch',
       deviceType: 'dimmer/level',
       deviceId: @get('device'),
-      command: newLevel,
+      command: @_level,
       (data) =>
         json = JSON.parse data
-        
-  levelDown: ->
-    newLevel = @minusLevel()
-    $.post '/smartthings/dispatch',
-      deviceType: 'dimmer/level',
-      deviceId: @get('device'),
-      command: newLevel,
-      (data) =>
-        json = JSON.parse data   
-
+    
   toggleState: ->
     newState = @get 'stateInverse'
     @set 'state', newState
@@ -92,12 +70,15 @@ class Dashing.Stdimmer extends Dashing.ClickableWidget
 
   onData: (data) ->
 
-
   onClick: (event) ->
-    if event.target.id == "level-down"
-      @levelDown()
-    else if event.target.id == "level-up"
-      @levelUp()
+    if event.target.id == "dimmer"
+      @setLevel(event)
     else if event.target.id == "switch"
       @postState()
+      
+  onTouchStart: (event) ->
+    if event.target.id == "dimmer"
+      @setLevel(event)
+    else if event.target.id == "switch"
+      @postState() 
     
