@@ -69,15 +69,9 @@ class Dashing.Stdimmerslider extends Dashing.ClickableWidget
   ready: ->
 
   onData: (data) ->
-
-  onClick: (event) ->
-    if event.target.id == "dimmer"
-      @setLevel(event)
-    else if event.target.id == "switch"
-      @postState()
       
   onTouchStart: (event) ->
-    if event.target.id == "dimmer"
+    if event.target.id == "slider"
       @setLevel(event)
     else if event.target.id == "switch"
       @postState() 
