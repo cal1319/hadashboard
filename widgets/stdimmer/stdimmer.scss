@@ -3,7 +3,7 @@
 // ----------------------------------------------------------------------------
 @import "/app/assets/stylesheets/themes/current.scss";
 
-.widget-stdimmer {
+.widget-stdimmerslider {
 
   background-color: $background-color-action !important;
   position: relative;
@@ -14,15 +14,15 @@
     margin: 14px 0 20px;
   }
 
-  .dimmer-icon-off .dimmer-icon-on {
+  .switch-icon-off .switch-icon-on {
     font-size: 150%;
   }
 
-  .dimmer-icon-off {
+  .switch-icon-off {
     color: #888888;
   }
 
-  .dimmer-icon-on {
+  .switch-icon-on {
     color: #aaff00;
   }
 
@@ -32,42 +32,45 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 110px;
   }
 
-  .level {
-    display: inline-block;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 5px 0px;
-    padding-left: 8px;
-  }
-  
-  .unit {		
-      display: inline-block;		
-      color: rgba(255, 255, 255, 0.7);		
-  }
-  
-  .secondary-icon {
-    position: absolute;
-    bottom: 0px;
-    font-size: 25px;
-    width: 32px;
-    color: #888888;
+  #slider {
+    margin-top: 5px;
     
-    &.plus {
-      right: 24px;
-      i {
-        padding-bottom: 5px;
-        padding-left: 30px;
-      }
+    #dimmer {
+      -webkit-appearance: none;
+      background: #888888;
+      height: 8px;
+      width: 120px;
     }
     
-    &.minus {
-      left: 8px;
-      i {
-        padding-bottom: 5px;
-        padding-right: 30px;
-      }
+    #dimmer::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      z-index: 1;
+      background: #888888;
+      border: 1px solid #444;
+      width: 11px;
+      height: 24px;
+      cursor: pointer;
     }
-  }  
+
+    #level {
+      display: inline-block;
+      position: absolute;
+      top: 95px;
+      right: 25px;
+      font-weight: 600;
+      color: #888888;
+    }
+    
+    .unit {
+      display: inline-block;
+      position: absolute;
+      top: 95px;
+      right: 13px;
+      font-size: 10px;
+      color: #888888;
+    }
+  }
 }
