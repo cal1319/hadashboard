@@ -7,7 +7,7 @@ class Dashing.Trafficmap extends Dashing.Widget
       lat  = $(@node).data('lat')
       long = $(@node).data('long')
     else
-      zoom = 13
+      zoom = 12
     options =
       zoom: zoom
       center: {lat: lat, lng: long }
