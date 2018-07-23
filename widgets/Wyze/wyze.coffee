@@ -1,1 +1,1 @@
-class Dashing.extends Dashing.Widget
+class Dashing.Wyze extends Dashing.Widget
