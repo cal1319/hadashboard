@@ -1,1 +1,1 @@
-class Dashing.Tinycam extends Dashing.Widget
+class Dashing.extends Dashing.Widget
