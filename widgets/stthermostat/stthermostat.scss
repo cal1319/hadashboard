@@ -1,23 +1,72 @@
 // ----------------------------------------------------------------------------
-// Widget-sttemp styles
+// Widget-stthermostat styles
 // ----------------------------------------------------------------------------
-@import "/app/assets/stylesheets/themes/current.scss";
+.widget-stthermostat {
 
-.widget-sttemp {
+  .title {
+    color: #fff;
+  }
 
-  .value {
-  	color: $temp-value-color;
+  .temperature {
+  	color: #00aaff;
+   	font-size: 300%;
+  	font-weight: 400;
     display: inline-block;
-    vertical-align: middle;   
+    vertical-align:bottom;
+  	padding: 0;
+  	margin-left: 10px;
+  	margin-right: 0px;
+  	margin-top: 0px;
+  	margin-bottom: 20px;
   }
 
   .unit {
-    color: $temp-unit-color;
-    font-size: 250%;
+    color: #00aaff;
+    font-size: 200%;
     font-weight: 400;
     display: inline-block;
-    vertical-align: top;
-    margin-left: 5px;
-    margin-top: 5px; 
+    vertical-align:top;
+    margin-left: 0px;
+  	margin-right: 10px;
+  	margin-top: 5px;
+  	margin-bottom: 20px;
   }
-} 
+
+ .setpoint {
+    display: inline-block;
+	position: absolute;
+	text-align: center;
+	margin-left: -10px;
+    bottom: 0px;
+    font-size: 25px;
+    vertical-align: bottom;
+    color: rgba(255, 255, 255, 0.7);
+	padding-right: 100px;
+  }
+
+  .secondary-icon {
+    position: absolute;
+    bottom: 0px;
+    font-size: 25px;
+    width: 32px;
+    color: #888888;
+
+    &.plus {
+      right: 24px;
+
+      i {
+        padding-top: 10px;
+        padding-left: 30px;
+      }
+    }
+
+    &.minus {
+      left: 8px;
+
+      i {
+        padding-top: 10px;
+        padding-right: 30px;
+      }
+    }
+  }
+}
