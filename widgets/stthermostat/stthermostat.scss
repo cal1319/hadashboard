@@ -2,7 +2,8 @@
 // Widget-stthermostat styles
 // ----------------------------------------------------------------------------
 .widget-stthermostat {
-
+	background: $background-color url('/assets/thermostat.png') no-repeat 50% 50%;
+	
   .title {
     color: #fff;
     font-size: 300%;
