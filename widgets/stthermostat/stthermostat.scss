@@ -36,7 +36,7 @@
     display: inline-block;
 	position: absolute;
 	text-align: center;
-	margin-left: -10px;
+	margin-left: -25px;
     bottom: 0px;
     font-size: 25px;
     vertical-align: bottom;
@@ -47,20 +47,22 @@
   .secondary-icon {
     position: absolute;
     bottom: 0px;
-    font-size: 25px;
+    font-size: 45px;
     width: 32px;
-    color: #888888;
+    
 
     &.plus {
-      right: 24px;
+      color: #e59797;
+      right: 20px;
 
       i {
         padding-top: 10px;
-        padding-left: 30px;
+        padding-left: 5px;
       }
     }
 
     &.minus {
+      color: #889bdf;
       left: 8px;
 
       i {
