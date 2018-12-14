@@ -1,14 +1,16 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-	$background-color:  #3c3838;
+$background-color:  #9c4274;
 
 // ----------------------------------------------------------------------------
-// Widget-stthermostat styles
+// Widget-quote styles
 // ----------------------------------------------------------------------------
-.widget-stthermostat {
-	$background-color:  url('/assets/Thermostat.png') no-repeat 80% 80%;
-  .title {
+.widget-quote {
+  background: $background-color url('/assets/quote.png') ;
+  
+
+.title {
     color: #fff;
     font-size: 250%;
   }
