@@ -5,13 +5,15 @@ require "json"
 # If these are left blank, the script will try to locate you using your IP address
 latitude = "38.5378863"                   # Required
 longitude = "-121.57037609999998"                  # Required
-location = "Home,<us>California"   # Change me
+location = "Town,<us>Country"   # Change me
 
 units = "us"
 symbol = "F"
 key = "353b2c70b063c646e905d67cc2867088"                        # Required
 
-
+def ftoc (f)
+    c = (f-32)*5/9
+end
 
     
 SCHEDULER.every "15m", :first_in => 0 do |job|
@@ -39,10 +41,10 @@ SCHEDULER.every "15m", :first_in => 0 do |job|
     
     if currentResults
         
-        currentTemp = symbol == "F" ? "#{(currentResults["temperature"]).round}°#{symbol}" : "#{currentResults["temperature"].round}°#{symbol}"
+        currentTemp = symbol == "C" ? "#{ftoc(currentResults["temperature"]).round}°#{symbol}" : "#{currentResults["temperature"].round}°#{symbol}"
         currentlyIcon = currentResults["icon"]
-        currentHigh = (dailyResults[0]["temperatureMax"]).round
-        currentLow = (dailyResults[0]["temperatureMin"]).round
+        currentHigh = ftoc(dailyResults[0]["temperatureMax"]).round
+        currentLow = ftoc(dailyResults[0]["temperatureMin"]).round
         currentSummary = response["hourly"]["summary"]
         todaysSummary = "High of #{currentHigh} with a low of #{currentLow}. #{currentSummary}"
             
@@ -70,6 +72,14 @@ SCHEDULER.every "15m", :first_in => 0 do |job|
             time = Time.at(day["time"]).strftime("%A")
             summary = day["summary"]
             
+            # Should it be displayed in Celsius? If not, display in Fahrenheit
+            if(symbol == "C")
+                min = ftoc(day["temperatureMin"])
+                max = ftoc(day["temperatureMax"])
+            else
+                min = day["temperatureMin"]
+                max = day["temperatureMax"]
+            end
                 
             # Create object for the day to send back to the widget
             this_day = {
