@@ -3,13 +3,13 @@ require "json"
 
 
 # If these are left blank, the script will try to locate you using your IP address
-latitude = ""                   # Required
-longitude = ""                  # Required
-location = "Town,<br>Country"   # Change me
+latitude = "38.5378863"                   # Required
+longitude = "-121.57037609999998"                  # Required
+location = "West Sacramento,<br>California"   # Change me
 
-units = "uk"
-symbol = "C"
-key = ""                        # Required
+units = "us"
+symbol = "F"
+key = "353b2c70b063c646e905d67cc2867088"                        # Required
 
 def ftoc (f)
     c = (f-32)*5/9
