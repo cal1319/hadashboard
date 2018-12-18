@@ -5,7 +5,7 @@ require "json"
 # If these are left blank, the script will try to locate you using your IP address
 latitude = "38.5378863"                   # Required
 longitude = "-121.57037609999998"                  # Required
-location = "Home,<us>USA"   # Change me
+location = "West Sacramento,<us>USA"   # Change me
 
 units = "us"
 symbol = "F"
