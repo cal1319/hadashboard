@@ -12,7 +12,7 @@ symbol = "F"
 key = "353b2c70b063c646e905d67cc2867088"                        # Required
 
 def ftoc (f)
-    c = (f-0)
+    c = (f)
 end
 
     
