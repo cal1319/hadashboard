@@ -8,7 +8,7 @@ longitude = "-121.57037609999998"                  # Required
 location = "West Sacramento,<br>California"   # Change me
 
 units = "us"
-symbol = "F"
+symbol = "f"
 key = "353b2c70b063c646e905d67cc2867088"                        # Required
 
 def ftoc (f)
@@ -41,7 +41,7 @@ SCHEDULER.every "15m", :first_in => 0 do |job|
     
     if currentResults
         
-        currentTemp = symbol == "C" ? "#{ftoc(currentResults["temperature"]).round}°#{symbol}" : "#{currentResults["temperature"].round}°#{symbol}"
+        currentTemp = symbol == "F" ? "#{ftoc(currentResults["temperature"]).round}°#{symbol}" : "#{currentResults["temperature"].round}°#{symbol}"
         currentlyIcon = currentResults["icon"]
         currentHigh = ftoc(dailyResults[0]["temperatureMax"]).round
         currentLow = ftoc(dailyResults[0]["temperatureMin"]).round
