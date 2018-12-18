@@ -8,7 +8,7 @@ longitude = "-121.57037609999998"                  # Required
 location = "Home,<us>USA"   # Change me
 
 units = "us"
-symbol = "F"
+symbol = "C"
 key = "353b2c70b063c646e905d67cc2867088"                        # Required
 
 def ftoc (f)
