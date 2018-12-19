@@ -16,11 +16,11 @@ require 'open-uri'
 @oldFile3 = "assets/images/radar/old3.jpg"
 
 # Change "OHX" in the file << open... line to your radar station ID. Check README for link.
-def fetch_image(old_file,new_file)
+def fetch_image(host,old_file,new_file)
 	`rm #{old_file}` 
 	`mv #{new_file} #{old_file}`	
-	open('assets/images/radar/', 'wb') do |file|
-		file << open('https://radar.weather.gov/ridge/lite/N0R/OHX_0.png').read
+	open('assets/images/radar/new1', 'wb') do |file|
+		file << open('host').read
 	end
 	new_file
 end
