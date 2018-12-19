@@ -44,3 +44,8 @@ class Dashing.WeeklyWeather extends Dashing.Widget
   toSkycon: (data) ->
     'Skycons.' + data.replace(/-/g, "_").toUpperCase()
 ###
+
+onClick: (node, event) ->
+  	Dashing.cycleDashboardsNow(boardnumber: ('radar'), stagger: ("false"), fastTransition:('true'), transitiontype: @get('transitiontype'))
+
+ 
