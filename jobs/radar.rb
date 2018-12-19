@@ -1,7 +1,7 @@
 require 'open-uri'
 
 @cameraDelay = 1 # Needed for image sync. 
-@fetchNewImageEvery = '180s'
+@fetchNewImageEvery = '60s'
 
 @newFile1 = "assets/images/radar/new.jpg"
 @oldFile1 = "assets/images/radar/old.jpg"
