@@ -19,7 +19,7 @@ require 'open-uri'
 def fetch_image(old_file,new_file)
 	`rm #{old_file}` 
 	`mv #{new_file} #{old_file}`	
-	open('assets/images/radar/new.jpg', 'wb') do |file|
+	open('assets/images/radar/', 'wb') do |file|
 		file << open('https://radar.weather.gov/ridge/lite/N0R/OHX_0.png').read
 	end
 	new_file
