@@ -1,4 +1,4 @@
-require 'net/http'
+require 'open-uri'
 
 @cameraDelay = 1 # Needed for image sync. 
 @fetchNewImageEvery = '90s'
@@ -16,20 +16,15 @@ require 'net/http'
 @oldFile3 = "assets/images/radar/old3.jpg"
 
 # Change "OHX" in the file << open... line to your radar station ID. Check README for link.
-def fetch_image(host,old_file,new_file)
+def fetch_image(old_file,new_file)
 	`rm #{old_file}` 
 	`mv #{new_file} #{old_file}`	
-	Net::HTTP.start(host) do |http|
-		req = Net::HTTP::Get.new(new_file)
-		if cam_user != "None" ## if username for any particular camera is set to 'None' then assume auth not required.
-			req.basic_auth cam_user, cam_pass
-		end
-		response = http.request(req)
-		open(new_file, "wb") do |file|
-			file.write(response.body)
-		end
+	open('assets/images/radar/new.jpg', 'wb') do |file|
+		file << open('https://radar.weather.gov/ridge/lite/N0R/OHX_0.png').read
 	end
 	new_file
+end
+
 
 def make_web_friendly(file)
   "/" + File.basename(File.dirname(file)) + "/" + File.basename(file)
