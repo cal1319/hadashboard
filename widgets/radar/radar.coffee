@@ -1,4 +1,4 @@
-class Dashing.Radar extends Dashing.Widget  
+class Dashing.Radar extends Dashing.ClickableWidget  
 	ready: ->
 
 	onData: (data) -> 
