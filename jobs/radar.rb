@@ -39,11 +39,11 @@ SCHEDULER.every @fetchNewImageEvery, first_in: 0 do
 		warn "Failed to Get Radar Image"
 	end
  
-	send_event('radar', image: make_web_friendly(@oldFile1))
-	send_event('tahoe', image: make_web_friendly(@oldFile2))
-	send_event('norcal', image: make_web_friendly(@oldFile3))
+	send_event('radar1', image: make_web_friendly(@oldFile1))
+	send_event('radar2', image: make_web_friendly(@oldFile2))
+	send_event('radar3', image: make_web_friendly(@oldFile3))
 	sleep(@cameraDelay)
-	send_event('radar', image: make_web_friendly(new_file1))
-	send_event('tahoe', image: make_web_friendly(new_file2))
-	send_event('norcal', image: make_web_friendly(new_file3))
+	send_event('radar1', image: make_web_friendly(new_file1))
+	send_event('radar2', image: make_web_friendly(new_file2))
+	send_event('radar3', image: make_web_friendly(new_file3))
 end
