@@ -1,10 +1,16 @@
 require 'open-uri'
 
 @cameraDelay = 1 # Needed for image sync. 
-@fetchNewImageEvery = '180s'
 
 @newFile1 = "assets/images/radar/new.jpg"
 @oldFile1 = "assets/images/radar/old.jpg"
+
+SCHEDULER.every "60s", first_in: 0 do
+	new_file1 = fetch_image(@oldFile1,@newFile1)
+
+	if not File.exists?(@newFile1)
+		warn "Failed to Get Radar Image"
+	end
 
 # Change "OHX" in the file << open... line to your radar station ID. Check README for link.
 def fetch_image(old_file,new_file)
@@ -20,7 +26,7 @@ def make_web_friendly(file)
   "/" + File.basename(File.dirname(file)) + "/" + File.basename(file)
 end
 
-SCHEDULER.every @fetchNewImageEvery, first_in: 0 do
+SCHEDULER.every "60", first_in: 0 do
 	new_file1 = fetch_image(@oldFile1,@newFile1)
 
 	if not File.exists?(@newFile1)
