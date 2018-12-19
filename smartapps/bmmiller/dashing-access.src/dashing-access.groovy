@@ -137,9 +137,7 @@ mappings {
     }
 	path("/thermostat") {
     	action: [
-        	GET: "getThermostatTemperature",
-			GET: "getHeatingSetpoint",
-			GET: "getCoolingSetpoint"
+        	GET: "getThermostat"
         ]
     }
 }
@@ -745,79 +743,31 @@ def garageDoorHandler(evt) {
 //
 // Thermostat
 //
-def getThermostatTemperature() {
+def getThermostat() {
     def deviceId = request.JSON?.deviceId
-    log.debug "getThermostatTemperature ${deviceId}"
+    log.debug "getThermostat ${deviceId}"
 
     if (deviceId) {
         registerWidget("thermostat", deviceId, request.JSON?.widgetId)
 
-        def whichTemperature = thermostats.find { it.displayName == deviceId }
-        if (!whichTemperature) {
+        def whichThermostat = thermostats.find { it.displayName == deviceId }
+        if (!whichThermostat) {
             return respondWithStatus(404, "Device '${deviceId}' not found.")
         } else {
             return [
                 "deviceId": deviceId,
-                "value": whichTemperature.currentTemperature]
+                "temperature": whichThermostat.currentTemperature,
+                "heatingSetpoint": whichThermostat.heatingSetpoint,
+                "coolingSetpoint": whichThermostat.coolingSetpoint]
         }
     }
 
     def result = [:]
     thermostats.each {
         result[it.displayName] = [
-            "value": it.currentTemperature,
-            "widgetId": state.widgets.thermostat[it.displayName]]}
-
-    return result
-}
-
-def getHeatingSetpoint() {
-    def deviceId = request.JSON?.deviceId
-    log.debug "getHeatingSetpoint ${deviceId}"
-
-    if (deviceId) {
-        registerWidget("thermostat", deviceId, request.JSON?.widgetId)
-
-        def whichSetpoint = thermostats.find { it.displayName == deviceId }
-        if (!whichSetpoint) {
-            return respondWithStatus(404, "Device '${deviceId}' not found.")
-        } else {
-            return [
-                "deviceId": deviceId,
-                "value": whichSetpoint.heatingSetpoint]
-        }
-    }
-
-    def result = [:]
-    thermostats.each {
-        result[it.displayName] = [
-            "value": it.heatingSetpoint,
-            "widgetId": state.widgets.thermostat[it.displayName]]}
-
-    return result
-}
-
-def getCoolingSetpoint() {
-    def deviceId = request.JSON?.deviceId
-    log.debug "getCoolingSetpoint ${deviceId}"
-
-    if (deviceId) {
-        registerWidget("thermostat", deviceId, request.JSON?.widgetId)
-
-        def whichSetpoint = thermostats.find { it.displayName == deviceId }
-        if (!whichSetpoint) {
-            return respondWithStatus(404, "Device '${deviceId}' not found.")
-        } else {
-            return [
-                "deviceId": deviceId,
-                "value": whichSetpoint.coolingSetpoint]
-        }
-    }
-
-    def result = [:]
-    thermostats.each {
-        result[it.displayName] = [
-            "value": it.coolingSetpoint,
+            "temperature": it.currentTemperature,
+			"heatingSetpoint": it.heatingSetpoint,
+			"coolingSetpoint": it.coolingSetpoint,
             "widgetId": state.widgets.thermostat[it.displayName]]}
 
     return result
