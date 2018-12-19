@@ -1,6 +1,12 @@
 class Dashing.WeeklyWeather extends Dashing.ClickableWidget
 
-
+  constructor: ->
+    super
+  onClick: (node, event) ->
+  	Dashing.cycleDashboardsNow(boardnumber: ('radar'), stagger: ("false"), fastTransition:('true'), transitiontype: @get('transitiontype'))
+  
+  
+###
   constructor: ->
     super
 
@@ -12,8 +18,7 @@ class Dashing.WeeklyWeather extends Dashing.ClickableWidget
   
   onData: (data) ->
     #@setSkycon(data)
-  onClick: (node, event) ->
-  	Dashing.cycleDashboardsNow(boardnumber: ('radar'), stagger: ("false"), fastTransition:('true'), transitiontype: @get('transitiontype'))
+  
 
     
     
