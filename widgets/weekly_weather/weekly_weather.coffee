@@ -1,4 +1,4 @@
-class Dashing.WeeklyWeather extends Dashing.Widget
+class Dashing.WeeklyWeather extends Dashing.ClickableWidget
 
 ###
   constructor: ->
