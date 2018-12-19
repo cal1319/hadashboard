@@ -19,11 +19,17 @@ require 'open-uri'
 def fetch_image(host,old_file,new_file)
 	`rm #{old_file}` 
 	`mv #{new_file} #{old_file}`	
-	open('assets/images/radar/, 'wb') do |file|
-		file << open('host').read
+	Net::HTTP.start(host) do |http|
+		req = Net::HTTP::Get.new(new_file)
+		if cam_user != "None" ## if username for any particular camera is set to 'None' then assume auth not required.
+			req.basic_auth cam_user, cam_pass
+		end
+		response = http.request(req)
+		open(new_file, "wb") do |file|
+			file.write(response.body)
+		end
 	end
 	new_file
-end
 
 def make_web_friendly(file)
   "/" + File.basename(File.dirname(file)) + "/" + File.basename(file)
