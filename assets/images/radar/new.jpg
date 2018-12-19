@@ -28,7 +28,7 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>radar-widget/old.png at master · jesse-alvey/radar-widget</title>
+  <title>radar-widget/new.png at master · jesse-alvey/radar-widget</title>
     <meta name="description" content="Contribute to jesse-alvey/radar-widget development by creating an account on GitHub.">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
@@ -38,10 +38,10 @@
     <meta property="og:image" content="https://avatars3.githubusercontent.com/u/11009635?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="jesse-alvey/radar-widget" /><meta property="og:url" content="https://github.com/jesse-alvey/radar-widget" /><meta property="og:description" content="Contribute to jesse-alvey/radar-widget development by creating an account on GitHub." />
 
   <link rel="assets" href="https://github.githubassets.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MzUxNDM1MzUzOjJhOTZhNDU1ZTgxODQwN2ZkZGIwMTI3NGUyMTk5NTNkZGMxOWFkZDdiNTdjOWI1NjEzMzJjYWI4NDFjYTM0ZTE=--0c2307db7b484f03f7001c06ce1e6758bc9e10e3">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MzUxNDM1MzUzOjRkYWFjYTE5ZDU2YzhmNTQ4MzBkYzdiOTVmMTVhYTQwNGE1NmZhOTI4YmVkYzhlNmYwZWRhNzc3Nzc2ZjliOTM=--87cae3eb97d8abf9da929414f24b0b18ac4972af">
   <meta name="pjax-timeout" content="1000">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="FD02:0B24:68E26C5:963321F:5C199EE2" data-pjax-transient>
+  <meta name="request-id" content="C198:0B22:419F320:5CDD3D2:5C19A210" data-pjax-transient>
 
 
   
@@ -52,7 +52,7 @@
     <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
 
-  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="FD02:0B24:68E26C5:963321F:5C199EE2" /><meta name="octolytics-dimension-region_edge" content="sea" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="24196524" /><meta name="octolytics-actor-login" content="cal1319" /><meta name="octolytics-actor-hash" content="55af4670db320c4689c9073a035916c63f213711d38b8005342ffdc30ca25535" />
+  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="C198:0B22:419F320:5CDD3D2:5C19A210" /><meta name="octolytics-dimension-region_edge" content="sea" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="24196524" /><meta name="octolytics-actor-login" content="cal1319" /><meta name="octolytics-actor-hash" content="55af4670db320c4689c9073a035916c63f213711d38b8005342ffdc30ca25535" />
 <meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" />
 
 
@@ -71,7 +71,7 @@
     <meta name="user-login" content="cal1319">
 
       <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="NTZmZDZlN2RkZWVhM2M1YzVkMWU1NzYxZDlhODQ1NTFmYzNjYjUzZDU2ZTlkNGE1ZWI0NWZhYmNmMjAyYTAyNXx7InJlbW90ZV9hZGRyZXNzIjoiMTY5LjIzNy4xNzIuMTE5IiwicmVxdWVzdF9pZCI6IkZEMDI6MEIyNDo2OEUyNkM1Ojk2MzMyMUY6NUMxOTlFRTIiLCJ0aW1lc3RhbXAiOjE1NDUxODI5NTcsImhvc3QiOiJnaXRodWIuY29tIn0=">
+    <meta name="js-proxy-site-detection-payload" content="MzUwZDMwNmFjZWZmOWFlZTY0MTZiZWI0ZjZkYWY5MmJjMjU2MmI3YWFkYTc5ZmY5MjZmZTdhZDY0NzE4ZWIxNHx7InJlbW90ZV9hZGRyZXNzIjoiMTY5LjIzNy4xNzIuMTE5IiwicmVxdWVzdF9pZCI6IkMxOTg6MEIyMjo0MTlGMzIwOjVDREQzRDI6NUMxOUEyMTAiLCJ0aW1lc3RhbXAiOjE1NDUxODM3NjIsImhvc3QiOiJnaXRodWIuY29tIn0=">
 
     <meta name="enabled-features" content="DASHBOARD_V2_LAYOUT_OPT_IN,EXPLORE_DISCOVER_REPOSITORIES,UNIVERSE_BANNER,MARKETPLACE_PLAN_RESTRICTION_EDITOR,NOTIFY_ON_BLOCK,TIMELINE_COMMENT_UPDATES,RELATED_ISSUES,MARKETPLACE_INSIGHTS_V2">
 
@@ -87,7 +87,7 @@
   <meta name="octolytics-dimension-user_id" content="11009635" /><meta name="octolytics-dimension-user_login" content="jesse-alvey" /><meta name="octolytics-dimension-repository_id" content="111313732" /><meta name="octolytics-dimension-repository_nwo" content="jesse-alvey/radar-widget" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="true" /><meta name="octolytics-dimension-repository_parent_id" content="15285793" /><meta name="octolytics-dimension-repository_parent_nwo" content="grubernaut/camera-widget" /><meta name="octolytics-dimension-repository_network_root_id" content="15285793" /><meta name="octolytics-dimension-repository_network_root_nwo" content="grubernaut/camera-widget" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
 
 
-    <link rel="canonical" href="https://github.com/jesse-alvey/radar-widget/blob/master/assets/images/radar/old.png" data-pjax-transient>
+    <link rel="canonical" href="https://github.com/jesse-alvey/radar-widget/blob/master/assets/images/radar/new.png" data-pjax-transient>
 
 
   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
@@ -156,7 +156,7 @@
           aria-autocomplete="list"
           aria-controls="jump-to-results"
           aria-label="Search or jump to…"
-          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=6fwmJVqGQK+0hFfp9Xs+bZ51s0O15DKfhyBHlPpN6f+06glSC+V09LuMirpheibQUp2E3lI/9YVveoc3RmL9Lw=="
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=+Ej8UBUuuxKCsarPUwmOUssDcd/mcgS37zwayF179WalXtMnRE2PSY25d5zHCJbvB+tGQgGpw60HZtpr4VThtg=="
           spellcheck="false"
           autocomplete="off"
           >
@@ -376,7 +376,7 @@
           <li><a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a></li>
           <li><a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a></li>
           <li>
-            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="tf/V0moZME+19dHDIcv702vL6o2lCpJ1jb2tmOBJmuXw5Vco6QK/TlAWEL+C8cx5/3hLAwj+ARmfUY2voB10Lw==" />
+            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ut4RzAvVaWrJPzjmRWGFQ02NP4RzGBw4JeUeZY/U5t7/xJM2iM7mayzc+ZrmW7Lp2T6eCt7sj1Q3CT5Sz4AIFA==" />
               
               <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
                 Sign out
@@ -390,7 +390,7 @@
 
 
 
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="sr-only right-0" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="d2aJ08piutiZYba+THqNuwZhyvNEPdUxGNHgLcFkp3MyfAspSXk12XyCd8LvQLoRktJrfenJRl0KPcAagTBJuQ==" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="sr-only right-0" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="RHAddG8kvHkbzJg0+41Yvve+LfHmUYbZ5CeprWVoOe8Bap+O7D8zeP4vWUhYt28UYw2Mf0ulFbX2y4maJTzXJQ==" />
           <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
             Sign out
           </button>
@@ -427,7 +427,7 @@
 
       <ul class="pagehead-actions">
   <li>
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Kolx/+JIVS+KftDzYzt9GcOqskTPm3H5bH5mTpECF8vUOC0euUrdyEDLcSWAPYfZzNCbJ02OACHUsp947fZBlA==" />      <input type="hidden" name="repository_id" id="repository_id" value="111313732" class="form-control" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="5WU8aC3jqyM6c9cgHvJt6XRz+d2lJ//ljyHIe3dMYLob1GCJduEjxPDGdvb99JcpewnQvicyjj037TFNC7g25Q==" />      <input type="hidden" name="repository_id" id="repository_id" value="111313732" class="form-control" />
 
       <details class="details-reset details-overlay select-menu float-left">
         <summary class="btn btn-sm btn-with-count select-menu-button" data-ga-click="Repository, click Watch settings, action:blob#show">
@@ -501,7 +501,7 @@
 
   <li>
       <div class="js-toggler-container js-social-container starring-container ">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/jesse-alvey/radar-widget/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="pRdbraSZuS55TtX4LW6WdyhFnItupgWsUbzggXq9ejnqvQcoQwEMwa1HQ/RJuC8eyXF1bl4kyTFqhxKvIn2uiA==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/jesse-alvey/radar-widget/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="/9/M6XoGlxn3p2AAMSADiJTEd8XpRPS7fjhV+q7+yz2wdZBsnZ4i9iOu9gxV9rrhdfCeINnGOCZFA6fU9j4fjA==" />
       <input type="hidden" name="context" value="repository"></input>
       <button
         type="submit"
@@ -516,7 +516,7 @@
           0
         </a>
 </form>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/jesse-alvey/radar-widget/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="brjS0xhxbbhzpLh1XtfrmjdsoYLsH5VbFqMlHFJZJ4yK4Wajf9cKQNIGay1OEcdtYA6+s/UhHnDmjiw5KiHsUQ==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/jesse-alvey/radar-widget/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Z5dTi/A1AxVtc+lNWM2mjuchj4mA9AkU9Boh8uxXT1+Dzuf7l5Nk7czROhVIC4p5sEOQuJnKgj8ENyjXlC+Egg==" />
       <input type="hidden" name="context" value="repository"></input>
       <button
         type="submit"
@@ -535,7 +535,7 @@
   </li>
 
   <li>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/jesse-alvey/radar-widget/fork" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="O13X0DgjHLsY3vbEhJNRS/H5OC8TipygkT28jmjekiY4U9D2gVM6It4S3XAapSoh+uZkk9+53Om/O6QhTE8pRA==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/jesse-alvey/radar-widget/fork" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Xo7T+iUlxSieCaFA/A3MNS1Fy/YV+2vqcQa9DOrQ/cxdgNTcnFXjsVjFivRiO7dfJlqXStnIK6NfAKWjzkFGrg==" />
             <button
                 type="submit"
                 class="btn btn-sm btn-with-count"
@@ -618,9 +618,9 @@
 
 
   
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/jesse-alvey/radar-widget/blob/d900c99b35fe10640e67a7e1ead8a0cc451e5739/assets/images/radar/old.png">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/jesse-alvey/radar-widget/blob/d900c99b35fe10640e67a7e1ead8a0cc451e5739/assets/images/radar/new.png">Permalink</a>
 
-    <!-- blob contrib key: blob_contributors:v21:a26bba573c2cb0779d4bb0c2be62cdc4 -->
+    <!-- blob contrib key: blob_contributors:v21:b5cf9bbac4de9ab495876a297b5421e0 -->
 
     
 
@@ -664,7 +664,7 @@
 
 
             <a class="select-menu-item js-navigation-item js-navigation-open selected"
-               href="/jesse-alvey/radar-widget/blob/master/assets/images/radar/old.png"
+               href="/jesse-alvey/radar-widget/blob/master/assets/images/radar/new.png"
                data-name="master"
                data-skip-pjax="true"
                rel="nofollow">
@@ -703,7 +703,7 @@
         </clipboard-copy>
       </div>
       <div id="blob-path" class="breadcrumb">
-        <span class="repo-root js-repo-root"><span class="js-path-segment"><a data-pjax="true" href="/jesse-alvey/radar-widget"><span>radar-widget</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/jesse-alvey/radar-widget/tree/master/assets"><span>assets</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/jesse-alvey/radar-widget/tree/master/assets/images"><span>images</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/jesse-alvey/radar-widget/tree/master/assets/images/radar"><span>radar</span></a></span><span class="separator">/</span><strong class="final-path">old.png</strong>
+        <span class="repo-root js-repo-root"><span class="js-path-segment"><a data-pjax="true" href="/jesse-alvey/radar-widget"><span>radar-widget</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/jesse-alvey/radar-widget/tree/master/assets"><span>assets</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/jesse-alvey/radar-widget/tree/master/assets/images"><span>images</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/jesse-alvey/radar-widget/tree/master/assets/images/radar"><span>radar</span></a></span><span class="separator">/</span><strong class="final-path">new.png</strong>
       </div>
     </div>
 
@@ -711,15 +711,15 @@
     
   <div class="commit-tease">
       <span class="float-right">
-        <a class="commit-tease-sha" href="/jesse-alvey/radar-widget/commit/28bbe413ce836dbdc28be08825412f4318e67fef" data-pjax>
-          28bbe41
+        <a class="commit-tease-sha" href="/jesse-alvey/radar-widget/commit/e9dfcc60249f25e61517a792553531787d50782f" data-pjax>
+          e9dfcc6
         </a>
-        <relative-time datetime="2017-11-19T17:21:19Z">Nov 19, 2017</relative-time>
+        <relative-time datetime="2017-11-19T17:33:21Z">Nov 19, 2017</relative-time>
       </span>
       <div>
         <a rel="author" data-skip-pjax="true" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=11009635" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/jesse-alvey"><img class="avatar" src="https://avatars2.githubusercontent.com/u/11009635?s=40&amp;v=4" width="20" height="20" alt="@jesse-alvey" /></a>
         <a class="user-mention" rel="author" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=11009635" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/jesse-alvey">jesse-alvey</a>
-          <a data-pjax="true" title="Create old.png" class="message" href="/jesse-alvey/radar-widget/commit/28bbe413ce836dbdc28be08825412f4318e67fef">Create old.png</a>
+          <a data-pjax="true" title="Create new.png" class="message" href="/jesse-alvey/radar-widget/commit/e9dfcc60249f25e61517a792553531787d50782f">Create new.png</a>
       </div>
 
     <div class="commit-tease-contributors">
@@ -761,25 +761,25 @@
 
 
     <div class="BtnGroup">
-      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/jesse-alvey/radar-widget/raw/master/assets/images/radar/old.png">Raw</a>
-        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/jesse-alvey/radar-widget/blame/master/assets/images/radar/old.png">Blame</a>
-      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/jesse-alvey/radar-widget/commits/master/assets/images/radar/old.png">History</a>
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/jesse-alvey/radar-widget/raw/master/assets/images/radar/new.png">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/jesse-alvey/radar-widget/blame/master/assets/images/radar/new.png">Blame</a>
+      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/jesse-alvey/radar-widget/commits/master/assets/images/radar/new.png">History</a>
     </div>
 
         <a class="btn-octicon tooltipped tooltipped-nw"
-           href="x-github-client://openRepo/https://github.com/jesse-alvey/radar-widget?branch=master&amp;filepath=assets%2Fimages%2Fradar%2Fold.png"
+           href="x-github-client://openRepo/https://github.com/jesse-alvey/radar-widget?branch=master&amp;filepath=assets%2Fimages%2Fradar%2Fnew.png"
            aria-label="Open this file in GitHub Desktop"
            data-ga-click="Repository, open with desktop, type:windows">
             <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg>
         </a>
 
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/jesse-alvey/radar-widget/edit/master/assets/images/radar/old.png" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="+Lsclar7dMfPdhIL7HLK/cvRtX7ePuTfBqDsZlM45WaFSGwgpHOBrE831kTYVZo7f3ZcTx7HM9OoBZbm0Itv/Q==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/jesse-alvey/radar-widget/edit/master/assets/images/radar/new.png" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="hp/N6aYxwHiQpVDi8rFaU4XqVatkgLQJRG7mKM56q0XirmBBJJ5rJm8H1cvuybTo9OYVdSpV3aJE0Ly4n+eafw==" />
             <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
               aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with>
               <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
             </button>
 </form>
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/jesse-alvey/radar-widget/delete/master/assets/images/radar/old.png" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="m47NyuR3xHgbKRbDae04/cTVcmlUKihljWvAfOJ2UQ+rvx4+Mtlg78ZIkV/SJQx/AsH0uwcs6kUW6Ghr5LiKtQ==" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/jesse-alvey/radar-widget/delete/master/assets/images/radar/new.png" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="otRBfQnYCc1MEDM9rVKwclbhtf46g+EG9UTjqfM68NbsKk5B8cGkNb6Dla/bXQz2sNfHGLBtfaCf5lPhTe23NQ==" />
           <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
             aria-label="Fork this project and delete the file" data-disable-with>
             <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
@@ -813,7 +813,7 @@
       <ul class="BlobToolbar-dropdown dropdown-menu dropdown-menu-se mt-2">
         <li><clipboard-copy role="menuitem" class="dropdown-item" id="js-copy-lines" style="cursor:pointer;" data-original-text="Copy lines">Copy lines</clipboard-copy></li>
         <li><clipboard-copy role="menuitem" class="dropdown-item" id="js-copy-permalink" style="cursor:pointer;" data-original-text="Copy permalink">Copy permalink</clipboard-copy></li>
-        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/jesse-alvey/radar-widget/blame/d900c99b35fe10640e67a7e1ead8a0cc451e5739/assets/images/radar/old.png">View git blame</a></li>
+        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/jesse-alvey/radar-widget/blame/d900c99b35fe10640e67a7e1ead8a0cc451e5739/assets/images/radar/new.png">View git blame</a></li>
       </ul>
     </details-menu>
   </details>
@@ -848,7 +848,7 @@
 <div class="footer container-lg px-3" role="contentinfo">
   <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
     <ul class="list-style-none d-flex flex-wrap ">
-      <li class="mr-3">&copy; 2018 <span title="0.24288s from unicorn-555dcdbcbc-5hxzb">GitHub</span>, Inc.</li>
+      <li class="mr-3">&copy; 2018 <span title="0.33003s from unicorn-555dcdbcbc-t6pmr">GitHub</span>, Inc.</li>
         <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
         <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
         <li class="mr-3"><a href="/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
