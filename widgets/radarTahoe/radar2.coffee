@@ -1,4 +1,4 @@
-class Dashing.Radar2 extends Dashing.Widget  
+class Dashing.RadarTahoe extends Dashing.Widget  
 	ready: ->
 
 	onData: (data) -> 
