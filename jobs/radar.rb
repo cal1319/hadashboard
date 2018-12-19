@@ -5,7 +5,12 @@ require 'open-uri'
 @newFile1 = "assets/images/radar/new.jpg"
 @oldFile1 = "assets/images/radar/old.jpg"
 
-SCHEDULER.every "60s", :first_in => 0 do |job|
+SCHEDULER.every @fetchNewImageEvery, first_in: 0 do
+	new_file1 = fetch_image(@oldFile1,@newFile1)
+
+	if not File.exists?(@newFile1)
+		warn "Failed to Get Radar Image"
+end
 	
 
 # Change "OHX" in the file << open... line to your radar station ID. Check README for link.
