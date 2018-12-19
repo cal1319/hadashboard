@@ -19,13 +19,13 @@ class Dashing.Stthermostat extends Dashing.Widget
     get: -> @_modeFan ? "auto"
     set: (key, value) -> @_modeFan = value
 
-  @accessor 'setpointCool',
-    get: -> @_setpointCool ? "00"
-    set: (key, value) -> @_setpointCool = value
+  @accessor 'coolingSetpoint',
+    get: -> @_coolingSetpoint ? "00"
+    set: (key, value) -> @_coolingSetpoint = value
 
-  @accessor 'setpointHeat',
-    get: -> @_setpointHeat ? "00"
-    set: (key, value) -> @_setpointHeat = value
+  @accessor 'heatingSetpoint',
+    get: -> @_heatingSetpoint ? "00"
+    set: (key, value) -> @_heatingSetpoint = value
 
   @accessor 'icon',
     get: ->
@@ -82,20 +82,20 @@ class Dashing.Stthermostat extends Dashing.Widget
     return newMode
 
   plusTempCool: ->
-    @set 'setpointCool', parseInt(@get('setpointCool'),10)+1
-    return parseInt(@get('setpointCool'),10)+1
+    @set 'coolingSetpoint', parseInt(@get('coolingSetpoint'),10)+1
+    return parseInt(@get('coolingSetpoint'),10)+1
 
   minusTempCool: ->
-    @set 'setpointCool', parseInt(@get('setpointCool'),10)-1
-    return parseInt(@get('setpointCool'),10)-1
+    @set 'coolingSetpoint', parseInt(@get('coolingSetpoint'),10)-1
+    return parseInt(@get('coolingSetpoint'),10)-1
 
   plusTempHeat: ->
-    @set 'setpointHeat', parseInt(@get('setpointHeat'),10)+1
-    return parseInt(@get('setpointHeat'),10)+1
+    @set 'heatingSetpoint', parseInt(@get('heatingSetpoint'),10)+1
+    return parseInt(@get('heatingSetpoint'),10)+1
 
   minusTempHeat: ->
-    @set 'setpointHeat', parseInt(@get('setpointHeat'),10)-1
-    return parseInt(@get('setpointHeat'),10)-1
+    @set 'heatingSetpoint', parseInt(@get('heatingSetpoint'),10)-1
+    return parseInt(@get('heatingSetpoint'),10)-1
 
   queryState: ->
     $.get '/smartthings/dispatch',
@@ -105,8 +105,8 @@ class Dashing.Stthermostat extends Dashing.Widget
       (data) =>
         json = JSON.parse data
         @set 'temperature', json.temperature
-        @set 'setpointCool', json.setpointCool
-        @set 'setpointHeat', json.setpointHeat
+        @set 'coolingSetpoint', json.coolingSetpoint
+        @set 'heatingSetpoint', json.heatingSetpoint
         @set 'mode', json.mode
         @set 'modeFan', json.modeFan
         @set 'stateOperating', json.stateOperating
