@@ -3,14 +3,14 @@ require 'open-uri'
 @cameraDelay = 1 # Needed for image sync. 
 @fetchNewImageEvery = '180s'
 
-@newFile1 = "assets/images/radar/new1.jpg"
-@oldFile1 = "assets/images/radar/old1.jpg"
+@newFile1 = "assets/images/radarNorCal/new.jpg"
+@oldFile1 = "assets/images/radarNorCal/old.jpg"
 
 # Change "OHX" in the file << open... line to your radar station ID. Check README for link.
 def fetch_image(old_file,new_file)
 	`rm #{old_file}` 
 	`mv #{new_file} #{old_file}`	
-	open('assets/images/radar/new1.jpg', 'wb') do |file|
+	open('assets/images/radar/new.jpg', 'wb') do |file|
 		file << open('https://cdn.tegna-media.com/kxtv/weather/satradnorcal16x9.jpg').read
 	end
 	new_file
