@@ -36,6 +36,6 @@ class Dashing.Stweather extends Dashing.ClickableWidget
   onData: (data) ->
   
   onClick: (node, event) ->
-  	Dashing.cycleDashboardsNow(boardnumber: ('outside'), stagger: ("false"), fastTransition:('true'), transitiontype: @get('transitiontype'))
+  	Dashing.cycleDashboardsNow(boardnumber: ('weather'), stagger: ("false"), fastTransition:('true'), transitiontype: @get('transitiontype'))
 
  
