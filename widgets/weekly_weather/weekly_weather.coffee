@@ -1,6 +1,6 @@
 class Dashing.WeeklyWeather extends Dashing.ClickableWidget
 
-###
+
   constructor: ->
     super
 
