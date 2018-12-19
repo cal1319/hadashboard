@@ -33,4 +33,4 @@ class Dashing.Stweather extends Dashing.ClickableWidget
   ready: ->
 
   onData: (data) ->
-  onClick: data-id="cpage1-3" data-view="ChangePage" data-icon="pagelines" data-title="Outside" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="outside" ->
+ 
