@@ -40,6 +40,7 @@ preferences {
         input "humidities", "capability.relativeHumidityMeasurement", title: "Which humidity sensors?", multiple: true, required: false
         input "batteries", "capability.battery", title: "Which battery sensors?", multiple: true, required: false
         input "garagedoors", "capability.garageDoorControl", title: "Which garage doors?", multiple: true, required: false
+		input "thermostats", "capability.thermostat", title: "Which thermostats?", multiple: true, required: false
     }
 }
 
@@ -134,6 +135,11 @@ mappings {
             POST: "postGarage"
         ]
     }
+	path("/thermostat") {
+    	action: [
+        	GET: "getTemperature"
+        ]
+    }
 }
 
 
@@ -164,7 +170,8 @@ def initialize() {
         "temperature": [:],
         "humidity": [:],
         "battery": [:],
-        "garagedoor": [:]
+        "garagedoor": [:],
+		"thermostat": [:]
         ]
 
     subscribe(contacts, "contact", contactHandler)
@@ -181,6 +188,7 @@ def initialize() {
     subscribe(humidities, "humidity", humidityHandler)
     subscribe(batteries, "battery", batteryHandler)
     subscribe(garagedoors, "garage", garageDoorHandler)
+	subscribe(thermostats, "thermostat", thermostatHandler)
 }
 
 
@@ -730,6 +738,15 @@ def postGarage() {
 def garageDoorHandler(evt) {
     def widgetId = state.widgets.garage[evt.displayName]
     notifyWidget(widgetId, ["state": evt.value])
+}
+
+//
+// Thermostat
+//
+
+def thermostatHandler(evt) {
+    def widgetId = state.widgets.thermostat[evt.displayName]
+    notifyWidget(widgetId, ["value": evt.value])
 }
 
 //
