@@ -19,7 +19,7 @@ require 'open-uri'
 def fetch_image(host,old_file,new_file)
 	`rm #{old_file}` 
 	`mv #{new_file} #{old_file}`	
-	open('assets/images/radar/new1', 'wb') do |file|
+	open('host, 'wb') do |file|
 		file << open('host').read
 	end
 	new_file
