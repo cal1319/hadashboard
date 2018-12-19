@@ -180,7 +180,7 @@ def initialize() {
     subscribe(temperatures, "temperature", temperatureHandler)
     subscribe(humidities, "humidity", humidityHandler)
     subscribe(batteries, "battery", batteryHandler)
-    subscribe(garagedoors, "garagedoor", garageDoorHandler)
+    subscribe(garagedoors, "garage", garageDoorHandler)
 }
 
 
@@ -728,7 +728,7 @@ def postGarage() {
 }
 
 def garageDoorHandler(evt) {
-    def widgetId = state.widgets.garagedoor[evt.displayName]
+    def widgetId = state.widgets.garage[evt.displayName]
     notifyWidget(widgetId, ["state": evt.value])
 }
 
