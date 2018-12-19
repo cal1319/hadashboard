@@ -1,4 +1,4 @@
-require 'open-uri'
+require 'net/http'
 
 @cameraDelay = 1 # Needed for image sync. 
 @fetchNewImageEvery = '90s'
