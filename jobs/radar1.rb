@@ -10,7 +10,7 @@ require 'open-uri'
 def fetch_image(old_file,new_file)
 	`rm #{old_file}` 
 	`mv #{new_file} #{old_file}`	
-	open('assets/images/radar/new.jpg', 'wb') do |file|
+	open('assets/images/radar/new1.jpg', 'wb') do |file|
 		file << open('https://cdn.tegna-media.com/kxtv/weather/satradnorcal16x9.jpg').read
 	end
 	new_file
