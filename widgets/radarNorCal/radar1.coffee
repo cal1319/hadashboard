@@ -1,4 +1,4 @@
-class Dashing.Radar1 extends Dashing.Widget  
+class Dashing.RadarNorCal extends Dashing.Widget  
 	ready: ->
 
 	onData: (data) -> 
