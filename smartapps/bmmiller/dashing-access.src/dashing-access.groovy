@@ -775,7 +775,9 @@ def getThermostat() {
 
 def thermostatHandler(evt) {
     def widgetId = state.widgets.thermostat[evt.displayName]
-    notifyWidget(widgetId, ["value": evt.value])
+    notifyWidget(widgetId, ["temperature": evt.temperature])
+	notifyWidget(widgetId, ["heatingSetpoint": evt.heatingSetpoint])
+	notifyWidget(widgetId, ["coolingSetpoint": evt.coolingSetpoint])
 }
 
 //
