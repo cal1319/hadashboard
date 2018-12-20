@@ -9,6 +9,7 @@ require 'open-uri'
 	
 
 # Change "OHX" in the file << open... line to your radar station ID. Check README for link.
+SCHEDULER.every 30s, :first_in => 0 do
 def fetch_image(old_file,new_file)
 	`rm #{old_file}` 
 	`mv #{new_file} #{old_file}`	
@@ -22,7 +23,7 @@ def make_web_friendly(file)
   "/" + File.basename(File.dirname(file)) + "/" + File.basename(file)
 end
 
-SCHEDULER.every @fetchNewImageEvery, :first_in => 0 do
+SCHEDULER.every 30s, :first_in => 0 do
 	new_file1 = fetch_image(@oldFile1,@newFile1)
 
 	if not File.exists?(@newFile1)
