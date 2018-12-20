@@ -22,7 +22,7 @@ def make_web_friendly(file)
   "/" + File.basename(File.dirname(file)) + "/" + File.basename(file)
 end
 
-SCHEDULER.every 30s, :first_in => 0 do
+SCHEDULER.every "30s", :first_in => 0 do
 	new_file1 = fetch_image(@oldFile1,@newFile1)
 
 	if not File.exists?(@newFile1)
