@@ -757,27 +757,33 @@ def getThermostat() {
             return [
                 "deviceId": deviceId,
                 "temperature": whichThermostat.currentTemperature,
-                "heatingSetpoint": whichThermostat.heatingSetpoint,
-                "coolingSetpoint": whichThermostat.coolingSetpoint]
+                "heatingSetpoint": whichThermostat.currentHeatingSetpoint,
+                "coolingSetpoint": whichThermostat.currentCoolingSetpoint]
         }
     }
 
     def result = [:]
     thermostats.each {
+		log.debug "getThemostat: result set"
+		log.debug "it.temperature: ${it.heatingSetpoint}" 
+		log.debug "it.temperature: ${it.coolingSetpoint}" 
         result[it.displayName] = [
             "temperature": it.currentTemperature,
-			"heatingSetpoint": it.heatingSetpoint,
-			"coolingSetpoint": it.coolingSetpoint,
+			"heatingSetpoint": it.currentHeatingSetpoint,
+			"coolingSetpoint": it.currentCoolingSetpoint,
             "widgetId": state.widgets.thermostat[it.displayName]]}
 
     return result
 }
 
 def thermostatHandler(evt) {
+	log.debug "thermostatHandler"
+	log.debug "evt.temperature: ${evt.heatingSetpoint}" 
+	log.debug "evt.temperature: ${evt.coolingSetpoint}" 
     def widgetId = state.widgets.thermostat[evt.displayName]
-    notifyWidget(widgetId, ["temperature": evt.temperature])
-	notifyWidget(widgetId, ["heatingSetpoint": evt.heatingSetpoint])
-	notifyWidget(widgetId, ["coolingSetpoint": evt.coolingSetpoint])
+    notifyWidget(widgetId, ["temperature": evt.value])
+	notifyWidget(widgetId, ["heatingSetpoint": evt.value])
+	notifyWidget(widgetId, ["coolingSetpoint": evt.value])
 }
 
 //
