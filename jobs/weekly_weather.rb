@@ -9,14 +9,14 @@ location = "West Sacramento,<us>California"   # Change me
 
 units = "us"
 symbol = "F"
-key = "353b2c70b063c646e905d67cc2867088"                        # Required
+key = "53cbe4dab7a7a6cf2b3d7daee06b9962"                        # Required
 
 def ftoc (f)
     c = (f)
 end
 
     
-SCHEDULER.every "15m", :first_in => 0 do |job|
+SCHEDULER.every "60m", :first_in => 0 do |job|
 
     uri = URI("https://api.darksky.net/forecast/#{key}/#{latitude},#{longitude}?units=#{units}")
     req = Net::HTTP::Get.new(uri.path)
