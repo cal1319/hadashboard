@@ -1,24 +1,21 @@
 // ----------------------------------------------------------------------------
-// Sass declarations
-// ----------------------------------------------------------------------------
-
-
-// ----------------------------------------------------------------------------
 // Widget-stmode styles
 // ----------------------------------------------------------------------------
+@import "/app/assets/stylesheets/themes/current.scss";
+
 .widget-stthermostat {
 
-  background-color: #444 !important;
+  background-color: #444 !important; 
   position: relative;
 
   .title {
-    color: #fff;
+    color: $text-color;
   }
 
   .info {
 
     .title {
-      color: #fff;
+      color: $text-color;
       margin: 6px 0;
       font-size: 150%;
     }
@@ -39,10 +36,11 @@
         display: inline-block;
         vertical-align: top;
         margin-top: 0;
+		color: $text-color;
       }
 
       .unit {
-        color: #888;
+        color: $text-color;
         font-size: 250%;
         font-weight: 400;
         display: inline-block;
@@ -95,6 +93,7 @@
     vertical-align: top;
     margin-left: 0px;
     margin-top: 10px;
+	color: $text-color;
   }
 
   .label {
@@ -102,6 +101,7 @@
     bottom: -6px;
     left: 72px;
     font-size: 12px;
+	color: $text-color;
   }
 
   .setWrapper {
@@ -163,6 +163,7 @@
     margin: 0px 5px;
     vertical-align: middle;
     line-height: 40px;
+	color: #888;
   }
 
   .updated-at {
