@@ -40,7 +40,7 @@ preferences {
         input "humidities", "capability.relativeHumidityMeasurement", title: "Which humidity sensors?", multiple: true, required: false
         input "batteries", "capability.battery", title: "Which battery sensors?", multiple: true, required: false
         input "garagedoors", "capability.garageDoorControl", title: "Which garage doors?", multiple: true, required: false
-	input "thermostats", "capability.thermostat", title: "Which thermostats?", multiple: true, required: false
+		input "thermostats", "capability.thermostat", title: "Which thermostats?", multiple: true, required: false
     }
 }
 
@@ -124,11 +124,6 @@ mappings {
             GET: "getWeather"
         ]
     }
-    path("/thermostat") {
-        action: [
-            GET: "getThermostat"
-        ]
-    }
     path("/battery") {
         action: [
             GET: "getBattery"
@@ -138,6 +133,12 @@ mappings {
     	action: [
         	GET: "getGarage",
             POST: "postGarage"
+        ]
+    }
+	path("/thermostat") {
+    	action: [
+        	GET: "getThermostat",
+            POST: "postThermostat"
         ]
     }
 }
@@ -151,11 +152,13 @@ def installed() {
 }
 
 def updated() {
+	log.trace "Dashing Access: Updated, Unsubscribing..."
     unsubscribe()
     initialize()
 }
 
 def initialize() {
+	log.trace "Dashing Access: Initializing..."
     state.dashingURI = ""
     state.dashingAuthToken = ""
     state.widgets = [
@@ -168,10 +171,10 @@ def initialize() {
         "dimmer": [:],
         "switch": [:],
         "temperature": [:],
-	"thermostat": [:],
         "humidity": [:],
         "battery": [:],
-        "garagedoor": [:]
+        "garagedoor": [:],
+		"thermostat": [:]
         ]
 
     subscribe(contacts, "contact", contactHandler)
@@ -179,7 +182,7 @@ def initialize() {
     subscribe(locks, "lock", lockHandler)
     subscribe(motions, "motion", motionHandler)
     subscribe(meters, "power", meterPowerHandler)
-    subscribe(meters, "energy", meterEnergyHandler)
+	subscribe(meters, "energy", meterEnergyHandler)
     subscribe(presences, "presence", presenceHandler)
     subscribe(dimmers, "switch", dimmerSwitch)
     subscribe(dimmers, "level", dimmerHandler)
@@ -187,9 +190,14 @@ def initialize() {
     subscribe(temperatures, "temperature", temperatureHandler)
     subscribe(humidities, "humidity", humidityHandler)
     subscribe(batteries, "battery", batteryHandler)
-    subscribe(garagedoors, "garagedoor", garageDoorHandler)
-    subscribe(thermostats, "thermostat", thermostatHandler) 
-   
+    subscribe(garagedoors, "garage", garageDoorHandler)
+	subscribe(thermostats, "temperature", thermostatTempHandler)
+    subscribe(thermostats, "heatingSetpoint", thermostatHeatSPHandler)
+    subscribe(thermostats, "coolingSetpoint", thermostatCoolSPHandler)
+    subscribe(thermostats, "operatingState", thermostatOpStateHandler)
+    subscribe(thermostats, "thermostatMode", thermostatModeHandler)
+    subscribe(thermostats, "thermostatFanMode", thermostatFanModeHandler)
+    log.trace "Dashing Access: Initialzed and Subscriptions made"
 }
 
 
@@ -760,33 +768,72 @@ def getThermostat() {
                 "temperature": whichThermostat.currentTemperature,
                 "heatingSetpoint": whichThermostat.currentHeatingSetpoint,
                 "coolingSetpoint": whichThermostat.currentCoolingSetpoint,
-                "stateOperating": whichThermostat.currentThermostatOperatingState]
+                "stateOperating": whichThermostat.currentThermostatOperatingState,
+                "mode": whichThermostat.currentThermostatMode,
+                "fan": whichThermostat.currentThermostatFanMode]
         }
     }
 
     def result = [:]
     thermostats.each {
-		log.debug "getThemostat: result set"
+		log.debug "getThemostat:"
         result[it.displayName] = [
             "temperature": it.currentTemperature,
 			"heatingSetpoint": it.currentHeatingSetpoint,
 			"coolingSetpoint": it.currentCoolingSetpoint,
-            "stateOperating": it.currentThermostatOperatingState,           
+            "stateOperating": it.currentThermostatOperatingState,  
+            "mode": it.currentThermostatMode,
+            "modeFan": it.currentThermostatFanMode,
             "widgetId": state.widgets.thermostat[it.displayName]]}
 
     return result
 }
 
-def thermostatHandler(evt) {
-	log.debug "thermostatHandler" 
-    def widgetId = state.widgets.thermostat[evt.displayName]
-    notifyWidget(widgetId, ["temperature": evt.value])
-	notifyWidget(widgetId, ["heatingSetpoint": evt.value])
-	notifyWidget(widgetId, ["coolingSetpoint": evt.value])
-    notifyWidget(widgetId, ["stateOperating": evt.value])
+def postThermostat() {
+    def command = request.JSON?.command
+    def deviceId = request.JSON?.deviceId
+    log.debug "postThermostat: ${request.JSON}"
+
+    if (command && deviceId) {
+        def whichThermostat = thermostats.find { it.displayName == deviceId }
+        if (!whichThermostat) {
+            return respondWithStatus(404, "Device '${deviceId}' not found.")
+        } else {
+            whichThermostat."$command"()
+        }
+    }
+    return respondWithSuccess()
 }
 
+def thermostatTempHandler(evt) { 
+    def widgetId = state.widgets.thermostat[evt.displayName]
+    notifyWidget(widgetId, ["temperature": evt.value])
+}
 
+def thermostatHeatSPHandler(evt) {
+    def widgetId = state.widgets.thermostat[evt.displayName]
+    notifyWidget(widgetId, ["heatingSetpoint": evt.value])
+}
+
+def thermostatCoolSPHandler(evt) {
+    def widgetId = state.widgets.thermostat[evt.displayName]
+    notifyWidget(widgetId, ["coolingSetpoint": evt.value])
+}
+
+def thermostatOpStateHandler(evt) {
+    def widgetId = state.widgets.thermostat[evt.displayName]
+    notifyWidget(widgetId, ["operatingState": evt.value])
+}
+
+def thermostatModeHandler(evt) {
+    def widgetId = state.widgets.thermostat[evt.displayName]
+    notifyWidget(widgetId, ["mode": evt.value])
+}
+
+def thermostatFanModeHandler(evt) {
+    def widgetId = state.widgets.thermostat[evt.displayName]
+    notifyWidget(widgetId, ["modeFan": evt.value])
+}
 
 //
 // Widget Helpers
@@ -798,7 +845,7 @@ private registerWidget(deviceType, deviceId, widgetId) {
     }
 }
 
-private notifyWidget(widgetId, data) {
+private notifyWidget(widgetId, data) {	
     if (widgetId && state.dashingAuthToken) {
         def uri = getWidgetURI(widgetId)
         data["auth_token"] = state.dashingAuthToken
