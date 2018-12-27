@@ -136,9 +136,9 @@ class Dashing.Stthermostat extends Dashing.Widget
 
   coolUp: ->
     $.post '/smartthings/dispatch',
-      deviceType: 'thermostat/coolUp',
+      deviceType: 'thermostat',
       deviceId: @get('device'),
-      command: "",
+      command: "raiseCoolSetpoint",
       (data) =>
         json = JSON.parse data
         @plusTempCool()
@@ -146,18 +146,18 @@ class Dashing.Stthermostat extends Dashing.Widget
 
   coolDown: ->
     $.post '/smartthings/dispatch',
-      deviceType: 'thermostat/coolDown',
+      deviceType: 'thermostat',
       deviceId: @get('device'),
-      command: "",
+      command: "lowerCoolSetpoint",
       (data) =>
         json = JSON.parse data
         @minusTempCool()
 
   heatUp: ->
     $.post '/smartthings/dispatch',
-      deviceType: 'thermostat/heatUp',
+      deviceType: 'thermostat',
       deviceId: @get('device'),
-      command: "",
+      command: 'raiseHeatingSetpoint',
       (data) =>
         json = JSON.parse data
         @plusTempHeat()
@@ -165,9 +165,9 @@ class Dashing.Stthermostat extends Dashing.Widget
 
   heatDown: ->
     $.post '/smartthings/dispatch',
-      deviceType: 'thermostat/heatDown',
+      deviceType: 'thermostat',
       deviceId: @get('device'),
-      command: "",
+      command: 'lowerHeatingSetpoint',
       (data) =>
         json = JSON.parse data
         @minusTempHeat()
