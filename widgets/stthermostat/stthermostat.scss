@@ -4,11 +4,11 @@
 @import "/app/assets/stylesheets/themes/current.scss";
 
 $cool-color: #00BFFF;
-$cool-color-lower: #365eec;
+$cool-color-lower: #4169E1;
 $cool-color-raise: #B0C4DE;
 $heat-color: #DC143C;
 $heat-color-lower: #F08080;
-$heat-color-raise: #f20303; 
+$heat-color-raise: #8B0000; 
 
 .widget-stthermostat {
 
@@ -161,7 +161,7 @@ $heat-color-raise: #f20303;
 
   .mode img {
     width: 40px;
-    -webkit-filter: invert(100%);	
+    //-webkit-filter: invert(100%);	
   }
 
   .sets {
