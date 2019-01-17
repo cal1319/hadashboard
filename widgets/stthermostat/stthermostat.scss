@@ -3,6 +3,13 @@
 // ----------------------------------------------------------------------------
 @import "/app/assets/stylesheets/themes/current.scss";
 
+$cool-color: #00BFFF;
+$cool-color-lower: #4169E1;
+$cool-color-raise: #B0C4DE;
+$heat-color: #DC143C;
+$heat-color-lower: #F08080;
+$heat-color-raise: #8B0000; 
+
 .widget-stthermostat {
 
   background-color: #444 !important; 
@@ -64,7 +71,31 @@
 
 
   }
-
+  
+  .fa-minus-square.cool {
+    color: $cool-color-lower;
+  }
+  .fa-plus-square.cool {
+    color: $cool-color-raise;
+  }
+  .cooling-setpoint {	
+	.setpoint, .unit {
+      color: $cool-color;
+	}
+  }
+  
+  .fa-minus-square.heat {
+    color: $heat-color-lower;
+  }
+  .fa-plus-square.heat {
+    color: $heat-color-raise;
+  }  
+  .heating-setpoint {
+	.setpoint, .unit {
+      color: $heat-color;
+	}
+  }  
+	
   .toggle-area {
     z-index: 10;
     position: absolute;
@@ -120,6 +151,8 @@
     float: left;
     width:57px;
     height: 62px;
+	padding-left: 40px;
+	padding-top: 5px;
 
     &.fan {
       margin-top: 10px;
@@ -128,7 +161,7 @@
 
   .mode img {
     width: 40px;
-    -webkit-filter: invert(100%);
+    -webkit-filter: invert(100%);	
   }
 
   .sets {
