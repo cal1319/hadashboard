@@ -8,7 +8,7 @@ class Dashing.Stgarage extends Dashing.ClickableWidget
     set: (key, value) -> @_state = value
 
   @accessor 'icon',
-    get: -> 'car'
+    get: -> 'warehouse'
     set: Batman.Property.defaultAccessor.set
 
   @accessor 'icon-style', ->
