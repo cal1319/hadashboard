@@ -9,7 +9,7 @@ location = "West Sacramento,<us>California"   # Change me
 
 units = "us"
 symbol = "F"
-key = "53cbe4dab7a7a6cf2b3d7daee06b9962"                        # Required
+key = ENV["Dark_Sky_Key"]                        # Required
 
 def ftoc (f)
     c = (f)
