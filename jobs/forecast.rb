@@ -32,12 +32,12 @@ SCHEDULER.every '180m', :first_in => 0 do |job|
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_PEER
     response = http.request(Net::HTTP::Get.new(uri.request_uri))
-p    if not response.kind_of? Net::HTTPSuccess then raise "Forecast HTTP error" end
+    if not response.kind_of? Net::HTTPSuccess then raise "Forecast HTTP error" end
     forecast = JSON.parse(response.body)
     if forecast.has_key?("code") then raise "Forecast Error: #{forecast['code']}: #{forecast['error']}" end
     forecast_current_temp = forecast["currently"]["temperature"].round
     if forecast.has_key?("minutely") then forecast_summary_key = "minutely"
-    elsif forecast.has_key?("houly") then forecast_summary_key = "hourly"
+    elsif forecast.has_key?("hourly") then forecast_summary_key = "hourly"
     elsif forecast.has_key?("daily") then forecast_summary_key = "daily"
     else                                  forecast_summary_key = "currently" end
     forecast_summary = forecast[forecast_summary_key]["summary"]
