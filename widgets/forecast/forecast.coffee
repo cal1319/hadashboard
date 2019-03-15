@@ -21,7 +21,7 @@ class Dashing.Forecast extends Dashing.ClickableWidget
     # Handle incoming data
     # We want to make sure the first time they're set is after ready()
     # has been called, or the Skycons code will complain.
-    if @forecast_icons.list.length
+    if (data.current_icon && data.next_icon && data.later_icon)
       @setIcons()
 
   setIcons: ->
@@ -37,9 +37,7 @@ class Dashing.Forecast extends Dashing.ClickableWidget
     if @get(data)
       'Skycons.' + @get(data).replace(/-/g, "_").toUpperCase()
 
-  ready: ->
-   
-
+ 
   onData: (data) ->
   
   onClick: (node, event) ->
