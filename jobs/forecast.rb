@@ -18,7 +18,7 @@ SCHEDULER.every '2h', :first_in => 0 do |job|
   http = Net::HTTP.new("api.darksky.net/forecast", 443)
   http.use_ssl = true
   http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-  response = http.request(Net::HTTP::Get.new("/forecast/#{forecast_api_key}/#{forecast_location_lat},#{forecast_location_long}?units=#{forecast_units}"))
+  response = http.request(Net::HTTP::Get.new("forecast/#{key}/#{latitude},#{longitude}?units=#{units)")
   forecast = JSON.parse(response.body)  
   forecast_current_temp = forecast["currently"]["temperature"].round
   forecast_current_icon = forecast["currently"]["icon"]
