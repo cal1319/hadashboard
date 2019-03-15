@@ -1,86 +1,73 @@
 // ----------------------------------------------------------------------------
-// Widget-stweather styles
+// Sass declarations
 // ----------------------------------------------------------------------------
-@import "/app/assets/stylesheets/themes/current.scss";
+$background-color:  #3CAEEC;
 
-.widget.widget-stweather.weather {
-    text-shadow: 2px 2px $shadow-color;
+$full-color:  rgba(255, 255, 255, 1);
+$light-color: rgba(255, 255, 255, 0.7);
+
+// ----------------------------------------------------------------------------
+// Widget-forecast styles
+// ----------------------------------------------------------------------------
+.widget-title {
+  
+    color: $light-color;
+    font-size: 15px;
+    text-align: left;
+    text-transform: uppercase;
+    position: absolute;
+    top: 5px;
+
+	img {
+    	vertical-align: baseline;
+    	margin-right: 5px;
+    	height: 16px;
+	}
 }
 
-.widget-stweather {
+.widget-forecast {
+
+  background-color: $background-color;
+  padding-top: 15px !important;
+
   h1 {
-  	margin-bottom: 0px;
+    margin-bottom: 0px;
   }
 
-  .colored {
-    color: $weather-primary-text-color !important;
+  .updated-at {
+    color: rgba(0, 0, 0, 0.3);
+    top: 5px;
+    right: 10px;
+    left: auto;
   }
 
-  [class^="primary"] {
-  	display: inline-block;
-  	vertical-align: middle;
-  	padding: 0;
-  	margin-left: 10px;
-  	margin-right: 10px;
-  	margin-top: 0px;
-  	margin-bottom: 0px;
+  .title {
+    color: $light-color;
+    text-align: left;
+    font-size: 25px;
   }
 
-  [class^="secondary"] {
-  	display: inline-block;
-  	vertical-align: middle;
-  	padding: 0;
-  	margin-left: 0px;
-  	margin-right: 0px;
-  	margin-top: 0px;
-  	margin-bottom: 0px;
-    color: $weather-secondary-text-color;
+  .temp {
+    color: $full-color;
+    text-align: left;
+    font-size: 45px;
   }
 
-  .primary-climacon {
-  	font-family: "Climacons-Font";
-  	font-size: 90px; 
+  .summary {
+    color: $full-color;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 17px;
   }
 
-  .primary-info {
-   	font-size: 380%;
-  	font-weight: 400;
+  .forecast-icon {
+    float: left;
+    text-align: left;
+    margin-right: 20px;
   }
 
-  .primary-unit {
-    font-size: 250%;
-    font-weight: 400;
-    margin-left: 0;
-    margin-top: 20px;
-    vertical-align: top;
-  }
-
-  .secondary-icon {
-  	font-family: "Climacons-Font";
-  	font-size: 40px;
-  	margin-left: 10px;
-  	margin-right: 0px;
-  }
-
-  .secondary-climacon {
-  	font-family: "Climacons-Font";
-  	font-size: 55px;
-  	margin-left: 10px;
-  	margin-right: 10px;
-  }
-
-  .secondary-info {
-   	font-size: 170%;
-  	font-weight: 200;
-  }
-
-  hr {
-  	width: 90%;
-  	border: 0;
-  	height: 1px;
-  	background: rgba(255, 255, 255, 0.25);
-  	margin-top: 15px;
-  	margin-bottom: 15px;
+  .more-info {
+      color: $light-color;
   }
 
 }
