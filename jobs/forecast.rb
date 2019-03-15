@@ -14,11 +14,18 @@ forecast_location_long = "-121.57037609999998"
 # "uk" - SI w. windSpeed in mph
 forecast_units = "us"
   
-SCHEDULER.every '2h', :first_in => 0 do |job|
-  http = Net::HTTP.new("api.darksky.net/forecast", 443)
-  http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-  response = http.request(Net::HTTP::Get.new("forecast/#{key}/#{latitude},#{longitude}?units=#{units)")
+ uri = URI("https://api.darksky.net/forecast/#{key}/#{latitude},#{longitude}?units=#{units}")
+    req = Net::HTTP::Get.new(uri.path)
+
+    # Make request
+    res = Net::HTTP.start(
+            uri.host, uri.port, 
+            :use_ssl => uri.scheme == 'https', 
+            :verify_mode => OpenSSL::SSL::VERIFY_NONE) do |https|
+      https.request(req)
+    end
+
+  response = JSON.parse res.body
   forecast = JSON.parse(response.body)  
   forecast_current_temp = forecast["currently"]["temperature"].round
   forecast_current_icon = forecast["currently"]["icon"]
