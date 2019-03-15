@@ -1,4 +1,4 @@
-class Dashing.Forecast extends Dashing.ClickableWidget
+class Dashing.Forecast extends Dashing.Widget
 
   # Overrides Dashing.Widget method in dashing.coffee
   @accessor 'updatedAtMessage', ->
@@ -39,7 +39,4 @@ class Dashing.Forecast extends Dashing.ClickableWidget
 
  
   
-  onClick: (node, event) ->
-  	Dashing.cycleDashboardsNow(boardnumber: ('weather'), stagger: ("false"), fastTransition:('true'), transitiontype: @get('transitiontype'))
 
- 
