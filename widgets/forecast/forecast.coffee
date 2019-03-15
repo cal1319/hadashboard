@@ -1,34 +1,41 @@
-class Dashing.Stweather extends Dashing.ClickableWidget
+class Dashing.Forecast extends Dashing.Widget
+
+  # Overrides Dashing.Widget method in dashing.coffee
+  @accessor 'updatedAtMessage', ->
+    if updatedAt = @get('updatedAt')
+      timestamp = new Date(updatedAt * 1000)
+      hours = timestamp.getHours()
+      minutes = ("0" + timestamp.getMinutes()).slice(-2)
+      "Updated at #{hours}:#{minutes}"
+
   constructor: ->
     super
-    @_icons =
-      chanceflurries: '&#xe036',
-      chancerain: '&#xe009',
-      chancesleet: '&#xe003',
-      chancesnow: '&#xe036',
-      chancetstorms: '&#xe025',
-      clear: '&#xe028',
-      cloudy: '&#xe000',
-      flurries: '&#xe036',
-      fog: '&#xe01b',
-      hazy: '&#xe01b',
-      mostlycloudy: '&#xe001',
-      mostlysunny: '&#xe001',
-      partlycloudy: '&#xe001',
-      partlysunny: '&#xe001',
-      sleet: '&#xe003',
-      rain: '&#xe009',
-      snow: '&#xe036',
-      sunny: '&#xe028',
-      tstorms: '&#xe025'
+    @forecast_icons = new Skycons({"color": "white"})
+    @forecast_icons.play()
 
-  @accessor 'climacon', ->
-    new Batman.TerminalAccessible (attr) =>
-      @_icons[attr]
+  ready: ->
+    # This is fired when the widget is done being rendered
+    @setIcons()
 
-  @accessor 'now_temp',
-    get: -> if @_temp then Math.floor(@_temp) else 0
-    set: (key, value) -> @_temp = value
+  onData: (data) ->
+    # Handle incoming data
+    # We want to make sure the first time they're set is after ready()
+    # has been called, or the Skycons code will complain.
+    if @forecast_icons.list.length
+      @setIcons()
+
+  setIcons: ->
+    @setIcon('current_icon')
+    @setIcon('next_icon')
+    @setIcon('later_icon')
+
+  setIcon: (name) ->
+    skycon = @toSkycon(name)
+    @forecast_icons.set(name, eval(skycon)) if skycon
+
+  toSkycon: (data) ->
+    if @get(data)
+      'Skycons.' + @get(data).replace(/-/g, "_").toUpperCase()
 
   ready: ->
    
