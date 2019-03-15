@@ -39,10 +39,10 @@ end
 # Update the weather ever so often
 SCHEDULER.every '15m', :first_in => 0 do |job|
   # Current weather
-  weather = app.request(:get, 'West Sacromento', { feature: 'conditions' })
+  weather = app.request(:get, 'Twcconditions', { feature: 'conditions' })
 
   # Forecast (today & tomorrow)
-  forecast = app.request(:get, 'West Sacromento', { feature: 'forecast' })
+  forecast = app.request(:get, 'TwcForecast', { feature: 'forecast' })
   
   # Emit the event
   if weather and forecast
