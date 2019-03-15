@@ -39,15 +39,15 @@ end
 # Update the weather ever so often
 SCHEDULER.every '15m', :first_in => 0 do |job|
   # Current weather
-  weather = app.request(:get, 'Twcconditions', { feature: 'conditions' })
+  weather = app.request(:get, 'weather', { feature: 'conditions' })
 
   # Forecast (today & tomorrow)
-  forecast = app.request(:get, 'TwcForecast', { feature: 'forecast' })
+  forecast = app.request(:get, 'weather', { feature: 'forecast' })
   
   # Emit the event
   if weather and forecast
     data = JSON.parse(weather).merge JSON.parse(forecast)
-    send_event('West Sacromento', {
+    send_event('weather', {
       now_temp: data["current_observation"]["temp_f"],
       humidity: data["current_observation"]["relative_humidity"],
       wind_speed: data["current_observation"]["wind_mph"],
