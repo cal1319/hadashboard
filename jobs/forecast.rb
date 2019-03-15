@@ -1,21 +1,49 @@
-require 'net/http'
-require 'open-uri'
+require 'net/https'
+require 'json'
 
-@url = 'https://cdns.abclocal.go.com/three/kgo/weather/maps/ncal1_1280.jpg'
+# Forecast API Key from https://developer.forecast.io
+forecast_api_key = ""
 
-SCHEDULER.every '4s', :first_in => 0 do |job|
+# Latitude, Longitude for location
+forecast_location_lat = "45.429522"
+forecast_location_long = "-75.689613"
 
-    `find '/assets/images/radar/' -type f -mmin +1 -print0 | xargs -0 rm -f`
+# Unit Format
+# "us" - U.S. Imperial
+# "si" - International System of Units
+# "uk" - SI w. windSpeed in mph
+forecast_units = "us"
 
-    @currentTime = Time.now.strftime("%Y-%m-%d_%H-%M-%S")
-    @newFile1 = "assets/images/radar/snapshot-" + @currentTime + "_new.jpeg"
+# Language
+# check https://developer.forecast.io/docs/v2 for supported languages
+lang = "en"
 
-    open(@url, :http_basic_authentication => ['root', 'CamPW']) do |f|
-      open(@newFile1,'wb') do |file|
-        file.puts f.read
-      end
-    end
-
-    send_event('radar', image: ("/" + File.basename(File.dirname(@newFile1)) + "/" + File.basename(@newFile1)))
-
+SCHEDULER.every '180m', :first_in => 0 do |job|
+  begin
+    uri = URI.parse("https://api.darksky.net")
+    uri.path = "/forecast/#{forecast_api_key}/#{forecast_location_lat},#{forecast_location_long}"
+    params = {
+      :units   => forecast_units,
+      :lang    => lang,
+      :exclude => "alerts,flags"
+    }
+    uri.query = URI.encode_www_form(params)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+    response = http.request(Net::HTTP::Get.new(uri.request_uri))
+p    if not response.kind_of? Net::HTTPSuccess then raise "Forecast HTTP error" end
+    forecast = JSON.parse(response.body)
+    if forecast.has_key?("code") then raise "Forecast Error: #{forecast['code']}: #{forecast['error']}" end
+    forecast_current_temp = forecast["currently"]["temperature"].round
+    if forecast.has_key?("minutely") then forecast_summary_key = "minutely"
+    elsif forecast.has_key?("houly") then forecast_summary_key = "hourly"
+    elsif forecast.has_key?("daily") then forecast_summary_key = "daily"
+    else                                  forecast_summary_key = "currently" end
+    forecast_summary = forecast[forecast_summary_key]["summary"]
+    send_event('forecast', { temperature: "#{forecast_current_temp}&deg;", hour: "#{forecast_summary}"})
+  rescue => e
+    puts "\e[33mFor the forecast widget to work, you need to set up your API key and coordinates in jobs/forecast.rb file.\e[0m"
+    puts "\e[33m#{e.message}\e[0m"
+  end
 end
