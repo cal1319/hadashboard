@@ -18,7 +18,7 @@
               global.msCancelAnimationFrame      ;
 
     if(raf && caf) {
-      requestInterval = function(fn) {
+      requestInterval = function(fn, delay) {
         var handle = {value: null};
 
         function loop() {
@@ -140,12 +140,12 @@
    * I'll try to clean it up eventually! Promise! */
   var KEYFRAME = 500,
       STROKE = 0.08,
-      TAU = 2.0 * Math.PI,
+      TWO_PI = 2.0 * Math.PI,
       TWO_OVER_SQRT_2 = 2.0 / Math.sqrt(2);
 
   function circle(ctx, x, y, r) {
     ctx.beginPath();
-    ctx.arc(x, y, r, 0, TAU, false);
+    ctx.arc(x, y, r, 0, TWO_PI, false);
     ctx.fill();
   }
 
@@ -157,8 +157,8 @@
   }
 
   function puff(ctx, t, cx, cy, rx, ry, rmin, rmax) {
-    var c = Math.cos(t * TAU),
-        s = Math.sin(t * TAU);
+    var c = Math.cos(t * TWO_PI),
+        s = Math.sin(t * TWO_PI);
 
     rmax -= rmin;
 
@@ -207,11 +207,11 @@
     ctx.lineJoin = "round";
 
     ctx.beginPath();
-    ctx.arc(cx, cy, a, 0, TAU, false);
+    ctx.arc(cx, cy, a, 0, TWO_PI, false);
     ctx.stroke();
 
     for(i = 8; i--; ) {
-      p = (t + i / 8) * TAU;
+      p = (t + i / 8) * TWO_PI;
       cos = Math.cos(p);
       sin = Math.sin(p);
       line(ctx, cx + cos * b, cy + sin * b, cx + cos * c, cy + sin * c);
@@ -223,8 +223,8 @@
 
     var a = cw * 0.29 - s * 0.5,
         b = cw * 0.05,
-        c = Math.cos(t * TAU),
-        p = c * TAU / -16;
+        c = Math.cos(t * TWO_PI),
+        p = c * TWO_PI / -16;
 
     ctx.strokeStyle = color;
     ctx.lineWidth = s;
@@ -234,8 +234,8 @@
     cx += c * b;
 
     ctx.beginPath();
-    ctx.arc(cx, cy, a, p + TAU / 8, p + TAU * 7 / 8, false);
-    ctx.arc(cx + Math.cos(p) * a * TWO_OVER_SQRT_2, cy + Math.sin(p) * a * TWO_OVER_SQRT_2, a, p + TAU * 5 / 8, p + TAU * 3 / 8, true);
+    ctx.arc(cx, cy, a, p + TWO_PI / 8, p + TWO_PI * 7 / 8, false);
+    ctx.arc(cx + Math.cos(p) * a * TWO_OVER_SQRT_2, cy + Math.sin(p) * a * TWO_OVER_SQRT_2, a, p + TWO_PI * 5 / 8, p + TWO_PI * 3 / 8, true);
     ctx.closePath();
     ctx.stroke();
   }
@@ -244,8 +244,8 @@
     t /= 1350;
 
     var a = cw * 0.16,
-        b = TAU * 11 / 12,
-        c = TAU *  7 / 12,
+        b = TWO_PI * 11 / 12,
+        c = TWO_PI *  7 / 12,
         i, p, x, y;
 
     ctx.fillStyle = color;
@@ -265,6 +265,8 @@
     t /= 750;
 
     var a = cw * 0.1875,
+        b = TWO_PI * 11 / 12,
+        c = TWO_PI *  7 / 12,
         i, p, x, y;
 
     ctx.strokeStyle = color;
@@ -285,13 +287,13 @@
 
     var a  = cw * 0.16,
         b  = s * 0.75,
-        u  = t * TAU * 0.7,
+        u  = t * TWO_PI * 0.7,
         ux = Math.cos(u) * b,
         uy = Math.sin(u) * b,
-        v  = u + TAU / 3,
+        v  = u + TWO_PI / 3,
         vx = Math.cos(v) * b,
         vy = Math.sin(v) * b,
-        w  = u + TAU * 2 / 3,
+        w  = u + TWO_PI * 2 / 3,
         wx = Math.cos(w) * b,
         wy = Math.sin(w) * b,
         i, p, x, y;
@@ -303,7 +305,7 @@
 
     for(i = 4; i--; ) {
       p = (t + i / 4) % 1;
-      x = cx + Math.sin((p + i / 4) * TAU) * a;
+      x = cx + Math.sin((p + i / 4) * TWO_PI) * a;
       y = cy + p * cw;
 
       line(ctx, x - ux, y - uy, x + ux, y + uy);
@@ -408,7 +410,7 @@
     var a = cw / 8,
         b = a / 3,
         c = 2 * b,
-        d = (t % 1) * TAU,
+        d = (t % 1) * TWO_PI,
         e = Math.cos(d),
         f = Math.sin(d);
 
@@ -615,10 +617,10 @@
 
     t /= 5000;
 
-    var a = Math.cos((t       ) * TAU) * s * 0.02,
-        b = Math.cos((t + 0.25) * TAU) * s * 0.02,
-        c = Math.cos((t + 0.50) * TAU) * s * 0.02,
-        d = Math.cos((t + 0.75) * TAU) * s * 0.02,
+    var a = Math.cos((t       ) * TWO_PI) * s * 0.02,
+        b = Math.cos((t + 0.25) * TWO_PI) * s * 0.02,
+        c = Math.cos((t + 0.50) * TWO_PI) * s * 0.02,
+        d = Math.cos((t + 0.75) * TWO_PI) * s * 0.02,
         n = h * 0.936,
         e = Math.floor(n - k * 0.5) + 0.5,
         f = Math.floor(n - k * 2.5) + 0.5;
@@ -633,12 +635,6 @@
   };
 
   Skycons.prototype = {
-    _determineDrawingFunction: function(draw) {
-      if(typeof draw === "string")
-        draw = Skycons[draw.toUpperCase().replace(/-/g, "_")] || null;
-
-      return draw;
-    },
     add: function(el, draw) {
       var obj;
 
@@ -649,7 +645,10 @@
       if(el === null)
         return;
 
-      draw = this._determineDrawingFunction(draw);
+      if(typeof draw === "string") {
+        draw = draw.toUpperCase().replace(/-/g, "_");
+        draw = Skycons.hasOwnProperty(draw) ? Skycons[draw] : null;
+      }
 
       // Does nothing if the draw function isn't actually a function
       if(typeof draw !== "function")
@@ -672,7 +671,7 @@
 
       for(i = this.list.length; i--; )
         if(this.list[i].element === el) {
-          this.list[i].drawing = this._determineDrawingFunction(draw);
+          this.list[i].drawing = draw;
           this.draw(this.list[i], KEYFRAME);
           return;
         }
@@ -715,6 +714,8 @@
       }, 1000 / 60);
     },
     pause: function() {
+      var i;
+
       if(this.interval) {
         cancelInterval(this.interval);
         this.interval = null;
