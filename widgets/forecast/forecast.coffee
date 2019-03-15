@@ -1,4 +1,4 @@
-lass Dashing.Forecast extends Dashing.Widget
+class Dashing.Forecast extends Dashing.Widget
 
   # Overrides Dashing.Widget method in dashing.coffee
   @accessor 'updatedAtMessage', ->
