@@ -36,3 +36,6 @@ class Dashing.Forecast extends Dashing.ClickableWidget
   toSkycon: (data) ->
     if @get(data)
       'Skycons.' + @get(data).replace(/-/g, "_").toUpperCase()
+      
+  onClick: (node, event) ->
+  	Dashing.cycleDashboardsNow(boardnumber: ('weather'), stagger: ("false"), fastTransition:('true'), transitiontype: @get('transitiontype'))
