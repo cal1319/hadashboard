@@ -5,8 +5,8 @@ require 'json'
 forecast_api_key = ENV["Dark_Sky_Key"]
 
 # Latitude, Longitude for location
-forecast_location_lat = "45.429522"
-forecast_location_long = "-75.689613"
+forecast_location_lat = "38.5378863"
+forecast_location_long = "-121.57037609999998"
 
 # Unit Format
 # "us" - U.S. Imperial
