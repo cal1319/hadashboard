@@ -16,7 +16,7 @@ def ftoc (f)
 end
 
     
-SCHEDULER.every "60m", :first_in => 0 do |job|
+SCHEDULER.every "5m", :first_in => 0 do |job|
 
     uri = URI("https://api.darksky.net/forecast/#{key}/#{latitude},#{longitude}?units=#{units}")
     req = Net::HTTP::Get.new(uri.path)
