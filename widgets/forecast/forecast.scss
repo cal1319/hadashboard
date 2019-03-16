@@ -12,8 +12,8 @@ $light-color: rgba(255, 255, 255, 0.7);
 .widget-title {
   
     color: $light-color;
-    font-size: 15px;
-    text-align: left;
+    font-size: 35px;
+    text-align: middle;
     text-transform: uppercase;
     position: absolute;
     top: 5px;
@@ -43,8 +43,8 @@ $light-color: rgba(255, 255, 255, 0.7);
 
   .title {
     color: $light-color;
-    text-align: middle;
-    font-size: 45px;
+    text-align: left;
+    font-size: 25px;
   }
 
   .temp {
