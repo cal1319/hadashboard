@@ -530,7 +530,7 @@
         opts.colors = opts.colors || {};
         this.colors = {
             main    : opts.colors.main    || "#111",
-            moon    : opts.colors.moon    || "#353545",
+            moon    : opts.colors.moon    || "#42d1f4",
             fog     : opts.colors.fog     || "#CCC",
             fogbank : opts.colors.fogbank || "#AAA",
             cloud   : opts.colors.cloud   || "#666",
