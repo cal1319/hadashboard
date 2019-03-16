@@ -10,7 +10,7 @@ class Dashing.Forecast extends Dashing.ClickableWidget
 
   constructor: ->
     super
-    @forecast_icons = new Skycons({"color": "white"})
+   
     @forecast_icons.play()
 
   ready: ->
