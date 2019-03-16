@@ -20,7 +20,7 @@ lang = "en"
 
 SCHEDULER.every '180m', :first_in => 0 do |job|
    begin
-    uri = URI.parse("https://api.forecast.io")
+    uri = URI.parse("https://api.darksky.net")
     uri.path = "/forecast/#{forecast_api_key}/#{forecast_location_lat},#{forecast_location_long}"
     params = {
       :units   => forecast_units,
