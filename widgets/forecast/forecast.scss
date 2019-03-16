@@ -12,11 +12,17 @@ $light-color: rgba(255, 255, 255, 0.7);
 .widget-title {
   
     color: $light-color;
-    font-size: 18px;
+    font-size: 15px;
     text-align: left;
     text-transform: uppercase;
+    position: absolute;
     top: 5px;
 
+	img {
+    	vertical-align: baseline;
+    	margin-right: 5px;
+    	height: 16px;
+	}
 }
 
 .widget-forecast {
