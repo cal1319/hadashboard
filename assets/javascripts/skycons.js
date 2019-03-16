@@ -140,12 +140,12 @@
    * I'll try to clean it up eventually! Promise! */
   var KEYFRAME = 500,
       STROKE = 0.08,
-      TWO_PI = 2.0 * Math.PI,
+      TAU = 2.0 * Math.PI,
       TWO_OVER_SQRT_2 = 2.0 / Math.sqrt(2);
 
   function circle(ctx, x, y, r) {
     ctx.beginPath();
-    ctx.arc(x, y, r, 0, TWO_PI, false);
+    ctx.arc(x, y, r, 0, TAU, false);
     ctx.fill();
   }
 
@@ -157,8 +157,8 @@
   }
 
   function puff(ctx, t, cx, cy, rx, ry, rmin, rmax) {
-    var c = Math.cos(t * TWO_PI),
-        s = Math.sin(t * TWO_PI);
+    var c = Math.cos(t * TAU),
+        s = Math.sin(t * TAU);
 
     rmax -= rmin;
 
@@ -185,7 +185,7 @@
         c = cw * 0.24,
         d = cw * 0.28;
 
-    ctx.fillStyle = color;
+    ctx.fillStyle = color.cloud || color;
     puffs(ctx, t, cx, cy, a, b, c, d);
 
     ctx.globalCompositeOperation = 'destination-out';
@@ -201,17 +201,17 @@
         c = cw * 0.50 - s * 0.5,
         i, p, cos, sin;
 
-    ctx.strokeStyle = color;
+    ctx.strokeStyle = color.sun || color;
     ctx.lineWidth = s;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
 
     ctx.beginPath();
-    ctx.arc(cx, cy, a, 0, TWO_PI, false);
+    ctx.arc(cx, cy, a, 0, TAU, false);
     ctx.stroke();
 
     for(i = 8; i--; ) {
-      p = (t + i / 8) * TWO_PI;
+      p = (t + i / 8) * TAU;
       cos = Math.cos(p);
       sin = Math.sin(p);
       line(ctx, cx + cos * b, cy + sin * b, cx + cos * c, cy + sin * c);
@@ -223,10 +223,10 @@
 
     var a = cw * 0.29 - s * 0.5,
         b = cw * 0.05,
-        c = Math.cos(t * TWO_PI),
-        p = c * TWO_PI / -16;
+        c = Math.cos(t * TAU),
+        p = c * TAU / -16;
 
-    ctx.strokeStyle = color;
+    ctx.strokeStyle = color.moon || color;
     ctx.lineWidth = s;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
@@ -234,8 +234,8 @@
     cx += c * b;
 
     ctx.beginPath();
-    ctx.arc(cx, cy, a, p + TWO_PI / 8, p + TWO_PI * 7 / 8, false);
-    ctx.arc(cx + Math.cos(p) * a * TWO_OVER_SQRT_2, cy + Math.sin(p) * a * TWO_OVER_SQRT_2, a, p + TWO_PI * 5 / 8, p + TWO_PI * 3 / 8, true);
+    ctx.arc(cx, cy, a, p + TAU / 8, p + TAU * 7 / 8, false);
+    ctx.arc(cx + Math.cos(p) * a * TWO_OVER_SQRT_2, cy + Math.sin(p) * a * TWO_OVER_SQRT_2, a, p + TAU * 5 / 8, p + TAU * 3 / 8, true);
     ctx.closePath();
     ctx.stroke();
   }
@@ -244,11 +244,11 @@
     t /= 1350;
 
     var a = cw * 0.16,
-        b = TWO_PI * 11 / 12,
-        c = TWO_PI *  7 / 12,
+        b = TAU * 11 / 12,
+        c = TAU *  7 / 12,
         i, p, x, y;
 
-    ctx.fillStyle = color;
+    ctx.fillStyle = color.rain || color;
 
     for(i = 4; i--; ) {
       p = (t + i / 4) % 1;
@@ -265,11 +265,11 @@
     t /= 750;
 
     var a = cw * 0.1875,
-        b = TWO_PI * 11 / 12,
-        c = TWO_PI *  7 / 12,
+        b = TAU * 11 / 12,
+        c = TAU *  7 / 12,
         i, p, x, y;
 
-    ctx.strokeStyle = color;
+    ctx.strokeStyle = color.rain || color;
     ctx.lineWidth = s * 0.5;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
@@ -287,25 +287,25 @@
 
     var a  = cw * 0.16,
         b  = s * 0.75,
-        u  = t * TWO_PI * 0.7,
+        u  = t * TAU * 0.7,
         ux = Math.cos(u) * b,
         uy = Math.sin(u) * b,
-        v  = u + TWO_PI / 3,
+        v  = u + TAU / 3,
         vx = Math.cos(v) * b,
         vy = Math.sin(v) * b,
-        w  = u + TWO_PI * 2 / 3,
+        w  = u + TAU * 2 / 3,
         wx = Math.cos(w) * b,
         wy = Math.sin(w) * b,
         i, p, x, y;
 
-    ctx.strokeStyle = color;
+    ctx.strokeStyle = color.snow || color;
     ctx.lineWidth = s * 0.5;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
 
     for(i = 4; i--; ) {
       p = (t + i / 4) % 1;
-      x = cx + Math.sin((p + i / 4) * TWO_PI) * a;
+      x = cx + Math.sin((p + i / 4) * TAU) * a;
       y = cy + p * cw;
 
       line(ctx, x - ux, y - uy, x + ux, y + uy);
@@ -322,7 +322,7 @@
         c = cw * 0.21,
         d = cw * 0.28;
 
-    ctx.fillStyle = color;
+    ctx.fillStyle = color.fogbank || color;
     puffs(ctx, t, cx, cy, a, b, c, d);
 
     ctx.globalCompositeOperation = 'destination-out';
@@ -410,12 +410,12 @@
     var a = cw / 8,
         b = a / 3,
         c = 2 * b,
-        d = (t % 1) * TWO_PI,
+        d = (t % 1) * TAU,
         e = Math.cos(d),
         f = Math.sin(d);
 
-    ctx.fillStyle = color;
-    ctx.strokeStyle = color;
+    ctx.fillStyle = color.leaf || color;
+    ctx.strokeStyle = color.leaf || color;
     ctx.lineWidth = s;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
@@ -439,7 +439,7 @@
         e = (t + index                            ) % total,
         b, d, f, i;
 
-    ctx.strokeStyle = color;
+    ctx.strokeStyle = color.cloud || color;
     ctx.lineWidth = s;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
@@ -523,9 +523,27 @@
   }
 
   var Skycons = function(opts) {
+        opts = opts || {};
         this.list        = [];
         this.interval    = null;
-        this.color       = opts && opts.color ? opts.color : "black";
+        this.monochrome = typeof(opts.monochrome) === "undefined" ? true :  opts.monochrome;
+        opts.colors = opts.colors || {};
+        this.colors = {
+            main    : opts.colors.main    || "#111",
+            moon    : opts.colors.moon    || "#353545",
+            fog     : opts.colors.fog     || "#CCC",
+            fogbank : opts.colors.fogbank || "#AAA",
+            cloud   : opts.colors.cloud   || "#666",
+            snow    : opts.colors.snow    || "#C2EEFF",
+            leaf    : opts.colors.leaf    || "#2C5228",
+            rain    : opts.colors.rain    || "#7FDBFF",
+            sun     : opts.colors.sun     || "#FFDC00"
+        };
+        if(this.monochrome) {
+            this.color = opts.color || this.colors.main;
+        } else {
+            this.color = this.colors ;
+        }
         this.resizeClear = !!(opts && opts.resizeClear);
       };
 
@@ -617,15 +635,15 @@
 
     t /= 5000;
 
-    var a = Math.cos((t       ) * TWO_PI) * s * 0.02,
-        b = Math.cos((t + 0.25) * TWO_PI) * s * 0.02,
-        c = Math.cos((t + 0.50) * TWO_PI) * s * 0.02,
-        d = Math.cos((t + 0.75) * TWO_PI) * s * 0.02,
+    var a = Math.cos((t       ) * TAU) * s * 0.02,
+        b = Math.cos((t + 0.25) * TAU) * s * 0.02,
+        c = Math.cos((t + 0.50) * TAU) * s * 0.02,
+        d = Math.cos((t + 0.75) * TAU) * s * 0.02,
         n = h * 0.936,
         e = Math.floor(n - k * 0.5) + 0.5,
         f = Math.floor(n - k * 2.5) + 0.5;
 
-    ctx.strokeStyle = color;
+    ctx.strokeStyle = color.fog || color;
     ctx.lineWidth = k;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
@@ -635,6 +653,12 @@
   };
 
   Skycons.prototype = {
+    _determineDrawingFunction: function(draw) {
+      if(typeof draw === "string")
+        draw = Skycons[draw.toUpperCase().replace(/-/g, "_")] || null;
+
+      return draw;
+    },
     add: function(el, draw) {
       var obj;
 
@@ -645,10 +669,7 @@
       if(el === null)
         return;
 
-      if(typeof draw === "string") {
-        draw = draw.toUpperCase().replace(/-/g, "_");
-        draw = Skycons.hasOwnProperty(draw) ? Skycons[draw] : null;
-      }
+      draw = this._determineDrawingFunction(draw);
 
       // Does nothing if the draw function isn't actually a function
       if(typeof draw !== "function")
@@ -671,7 +692,7 @@
 
       for(i = this.list.length; i--; )
         if(this.list[i].element === el) {
-          this.list[i].drawing = draw;
+          this.list[i].drawing = this._determineDrawingFunction(draw);
           this.draw(this.list[i], KEYFRAME);
           return;
         }
