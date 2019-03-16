@@ -18,7 +18,7 @@ forecast_units = "us"
 # check https://developer.forecast.io/docs/v2 for supported languages
 lang = "en"
 
-SCHEDULER.every '60m', :first_in => 0 do |job|
+SCHEDULER.every '5m', :first_in => 0 do |job|
   begin
     uri = URI.parse("https://api.darksky.net")
     uri.path = "/forecast/#{forecast_api_key}/#{forecast_location_lat},#{forecast_location_long}"
