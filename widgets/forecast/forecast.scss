@@ -32,26 +32,26 @@ $light-color: rgba(255, 255, 255, 0.7);
   }
    .title {
     color: $light-color;
-    text-align: left;
+    text-align: middle;
     font-size: 25px;
   }
 
   .temp {
     color: $full-color;
-    text-align: left;
+    text-align: middle;
     font-size: 45px;
   }
 
   .summary {
     color: $full-color;
-    text-align: left;
+    text-align: middle;
     vertical-align: middle;
     font-size: 17px;
   }
 
   .forecast-icon {
     float: left;
-    text-align: left;
+    text-align: middle;
     margin-right: 20px;
   }
 
