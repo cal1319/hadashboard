@@ -9,7 +9,13 @@ $light-color: rgba(255, 255, 255, 0.7);
 // ----------------------------------------------------------------------------
 // Widget-forecast styles
 // ----------------------------------------------------------------------------
-
+.widget-title {
+  
+    color: $light-color;
+    font-size: 15px;
+    text-transform: uppercase;
+    
+}
 .widget-forecast {
 
   background-color: $background-color;
@@ -32,7 +38,7 @@ $light-color: rgba(255, 255, 255, 0.7);
 
   .temp {
     color: $full-color;
-    font-size: 65px;
+    font-size: 70px;
     margin-left: 10px;
    
   }
