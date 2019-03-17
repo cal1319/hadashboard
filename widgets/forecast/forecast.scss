@@ -15,14 +15,8 @@ $light-color: rgba(255, 255, 255, 0.7);
     font-size: 15px;
     text-align: left;
     text-transform: uppercase;
-    position: absolute;
+    position: relative;
     top: 5px;
-
-	img {
-    	vertical-align: baseline;
-    	margin-right: 5px;
-    	height: 16px;
-	}
 }
 
 .widget-forecast {
