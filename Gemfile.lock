@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (3.0.3)
+    addressable (2.6.3)
       public_suffix (~> 2.0, >= 2.0.2)
     backports (3.7.0)
     bcrypt (3.1.11)
@@ -176,7 +176,7 @@ DEPENDENCIES
   thor
 
 RUBY VERSION
-   ruby 3.0.3p57
+   ruby 2.6.3p57
 
 BUNDLED WITH
    1.17.1
