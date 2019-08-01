@@ -75,7 +75,8 @@ $ heroku config:set \
   HEROKU_OAUTH_SECRET=uuid-from-above\
   SESSION_SECRET=some-random-uuid \
   ST_CLIENT_ID=from-step-3 \
-  ST_CLIENT_SECRET=from-step-3
+  ST_CLIENT_SECRET=from-step-3 \
+  GOOGLE_MAPS_API_KEY=api-key-from-google
 ```
 
 - **DASHING_AUTH_TOKEN**: Set this to a new, random uuid. You may be able to generate a new uuid using the `uuidgen` command line tool, if it is installed on your local machine. You can also use one of the many [online tools](https://www.uuidgenerator.net) to generate uuids. This is used as a machine-to-machine password of sorts, so you could even make up your own. Just make sure it's long, and random, and comlicated in order to ensure it is as secure as possible. This uuid/password is used for the SmartApp to communicate with the Heroku app.
@@ -86,6 +87,7 @@ $ heroku config:set \
 - **SESSION_SECRET**: Generate a new, random uuid for this, just like you did for **DASHING_AUTH_TOKEN**. This uuid/password is used to encrypt the session cookie in your browser.
 - **ST_CLIENT_ID**: Set this to the SmartApp **'OAuth Client ID'** from step 3.
 - **ST_CLIENT_SECRET**: Set this to the SmartApp **'OAuth Client Secret'** from step 3.
+- **GOOGLE_MAPS_API_KEY**: If you want to utilize the trafficmap widget, you'll need to get a Google Maps Javascript API Key, setup billing on the Google Cloud Project, etc.  Once you have this, set it here.  This step is completely optional.
 
 Lastly, we will add a PostgreSQL database. Heroku makes this trivial by simple configuring an add-on:
 

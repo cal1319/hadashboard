@@ -147,7 +147,8 @@ h3 {
 .widget {
   padding: 0px 0px;
   text-align: center;
-  width: 100%;
+  width: inherit;
+  height: inherit;
   display: table-cell;
   vertical-align: middle;
   text-shadow: 2px 2px $shadow-color;

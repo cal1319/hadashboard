@@ -1,4 +1,4 @@
-class Dashing.Stweather extends Dashing.ClickableWidget
+class Dashing.Stweather extends Dashing.Widget
   constructor: ->
     super
     @_icons =
@@ -31,11 +31,5 @@ class Dashing.Stweather extends Dashing.ClickableWidget
     set: (key, value) -> @_temp = value
 
   ready: ->
-   
 
   onData: (data) ->
-  
-  onClick: (node, event) ->
-  	Dashing.cycleDashboardsNow(boardnumber: ('weather'), stagger: ("false"), fastTransition:('true'), transitiontype: @get('transitiontype'))
-
- 

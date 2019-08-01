@@ -39,7 +39,7 @@ preferences {
         input "temperatures", "capability.temperatureMeasurement", title: "Which temperature sensors?", multiple: true, required: false
         input "humidities", "capability.relativeHumidityMeasurement", title: "Which humidity sensors?", multiple: true, required: false
         input "batteries", "capability.battery", title: "Which battery sensors?", multiple: true, required: false
-        input "garagedoors", "capability.garageDoorControl", title: "Which garage doors?", multiple: true, required: false
+        input "garagedoors", "capability.doorControl", title: "Which garage doors?", multiple: true, required: false
 		input "thermostats", "capability.thermostat", title: "Which thermostats?", multiple: true, required: false
     }
 }
@@ -178,7 +178,7 @@ def initialize() {
         ]
 
     subscribe(contacts, "contact", contactHandler)
-    subscribe(location, locationHandler)
+    subscribe(location, "mode", locationHandler)
     subscribe(locks, "lock", lockHandler)
     subscribe(motions, "motion", motionHandler)
     subscribe(meters, "power", meterPowerHandler)
@@ -190,7 +190,7 @@ def initialize() {
     subscribe(temperatures, "temperature", temperatureHandler)
     subscribe(humidities, "humidity", humidityHandler)
     subscribe(batteries, "battery", batteryHandler)
-    subscribe(garagedoors, "garage", garageDoorHandler)
+    subscribe(garagedoors, "door", garageDoorHandler)
 	subscribe(thermostats, "temperature", thermostatTempHandler)
     subscribe(thermostats, "heatingSetpoint", thermostatHeatSPHandler)
     subscribe(thermostats, "coolingSetpoint", thermostatCoolSPHandler)
@@ -344,14 +344,15 @@ def meterEnergyHandler(evt) {
 //
 def getMode() {
     def widgetId = request.JSON?.widgetId
+    
     if (widgetId) {
         if (!state['widgets']['mode'].containsKey(widgetId)) {
-            state['widgets']['mode'].put(widgetId.value, widgetId)            
+            state['widgets']['mode'].put(widgetId, widgetId)   
             log.debug "registerWidget for mode: ${widgetId}"
         }
     }
 
-    log.debug "getMode"
+    log.debug "getMode: ${location.mode}"
     return ["mode": location.mode]
 }
 
@@ -360,7 +361,7 @@ def postMode() {
     log.debug "postMode ${mode}"
 
     if (mode) {
-        setLocationMode(mode)
+        setLocationMode(mode)        	
     }
 
     if (location.mode != mode) {
@@ -713,22 +714,24 @@ def getGarage() {
         if (!whichGarageDoor) {
             return respondWithStatus(404, "Device '${deviceId}' not found.")
         } else {
+        	log.debug "${whichGarageDoor}"
             return [
                 "deviceId": deviceId,
-                "state": whichGarageDoor.currentState]
+                "state": whichGarageDoor.currentDoor]
         }
     }
 
     def result = [:]
     garagedoors.each {
         result[it.displayName] = [
-            "state": it.currentState,
+            "state": it.currentDoor,
             "widgetId": state.widgets.garagedoor[it.displayName]]}
 
     return result
 }
 
 def postGarage() {
+	log.debug "postGarage ${request.JSON}"
     def command = request.JSON?.command
     def deviceId = request.JSON?.deviceId
     log.debug "postGarage ${deviceId}, ${command}"

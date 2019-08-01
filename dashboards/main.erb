@@ -2,252 +2,219 @@
 
 <% content_for :title do %>HADashboard<% end %>
 
-<div class="gridster" id="main">
-  <ul>
-    <!-- Row 1 -->
-	   
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="morning" data-view="Stswitchmorning" data-icon="sun-o" data-title="Good Morning" data-device="morning"></div>
-    </li>
-	
-    <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
-      <div data-id="goodnight" data-view="Stswitchnight" data-icon="moon-o" data-title="Good Night" data-device="night"></div>
-    </li>
-    
-    <li data-row="1" data-col="3" data-sizex="2" data-sizey="1">
-      <div data-id="clock" data-view="Clock" data-title="Synergy" data-min="0" data-max="100"></div>
-    </li>
-	  
-    <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">
-      <div data-id="cpresence" data-view="Stpresencechris" data-icon="male" data-title="Chris" data-device="Chris's iPhone"></div>
-    </li>
-	  
-    <li data-row="1" data-col="6" data-sizex="1" data-sizey="1">
-      <div data-id="hpresence" data-view="Stpresencehillary" data-icon="female" data-title="Hillary" data-device="Hillary"></div>
-    </li>
-	  
-    <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="garagedoor" data-view="Stgarage" data-icon="warehouse" data-title="Garage Door" data-device="Garage Door"></div>
-    </li> 
-    
-    <!-- Row 2 -->
+    <div class="gridster" id="main">
+      <ul>
+        <!-- Row 1 -->
+        <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+          <div data-id="clock" data-view="Clock" data-title="Synergy" data-min="0" data-max="100"/>
+        </li>
 
-   <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="livingroom" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Living Room" data-device="living room"></div>
-    </li>
-	 
-   <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
-      <div data-id="kitchenlights1" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Kitchen Lights" data-device="Kitchen light set1"></div>
-    </li>
-   
-   <li data-row="2" data-col="3" data-sizex="2" data-sizey="2">
-      <div data-id="forecast" data-view="Forecast"></div>
+        <li data-row="1" data-col="3" data-sizex="2" data-sizey="2">
+          <div data-id="weather" data-view="Stweather"/>
+        </li>
+
+        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">
+          <div data-id="firelights" data-view="Stdimmerslider" data-icon="far fa-lightbulb" data-title="Fireplace" data-device="Fireplace Lights"/>
+        </li>
+
+        <li data-row="1" data-col="6" data-sizex="1" data-sizey="1">
+          <div data-id="livingroomlight" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Living Room" data-device="Living Room Light"/>
+        </li>    
+
+        <!-- Row 2 -->
+        <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
+          <div data-id="mode" data-view="Stmode" data-title="Current Mode"/>
+        </li>
+
+        <li data-row="2" data-col="5" data-sizex="1" data-sizey="1">
+          <div data-id="eltemp" data-view="Sttemp" data-title="Eleni's Bedroom" data-device="Eleni Bedroom"/>
+        </li>
+
+        <li data-row="2" data-col="6" data-sizex="1" data-sizey="1">
+          <div data-id="zoetemp" data-view="Sttemp" data-title="Zoe's Bedroom" data-device="Zoe Bedroom"/>
+        </li>	
+
+        <!-- Row 3 -->
+        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+          <div data-id="home" data-view="Stmodechange" data-title="Set Home" data-icon="fa fa-home" data-changemode="Home" data-phrase="I'm Back!" data-countdown="5"/>
+        </li>
+
+        <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+          <div data-id="away" data-view="Stmodechange" data-title="Set Away" data-icon="road" data-changemode="Away" data-phrase="Goodbye!" data-countdown="5"/>
+        </li>
+
+        <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+          <div data-id="guest" data-view="Stmodechange" data-title="Set Guest" data-icon="user" data-changemode="Guest" data-phrase="Turn On Guest Mode" data-countdown="5"/>
+        </li>
+
+        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1">
+          <div data-id="wholehousepower" data-view="Stmeter" data-title="Whole Home" data-device="Neurio" data-min="0" data-max="4000"/>
+        </li>
+
+        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1">
+          <div data-id="mbrtemp" data-view="Sttemp" data-title="Master Bedroom" data-device="Master Bedroom"/>
+        </li>
+
+        <li data-row="3" data-col="6" data-sizex="1" data-sizey="1">
+          <div data-id="ofctemp" data-view="Sttemp" data-title="Office" data-device="Office"/>
+        </li>
+
+        <!-- Row 4 -->
+        <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
+          <div data-id="apresence" data-view="Stpresence" data-icon="female" data-title="Alexis" data-device="Alexis"/>
+        </li>
+
+        <li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
+          <div data-id="bpresence" data-view="Stpresence" data-icon="male" data-title="Brandon" data-device="Brandon"/>
+        </li>
+
+        <li data-row="4" data-col="3" data-sizex="1" data-sizey="1">
+          <div data-id="garagedoor" data-view="Stgarage" data-icon="warehouse" data-title="Garage Door" data-device="Garage Door"/>
+        </li>
+
+        <li data-row="4" data-col="4" data-sizex="1" data-sizey="1">
+          <div data-id="attemp" data-view="Sttemp" data-title="Attic" data-device="Attic"/>
+        </li>
+
+        <li data-row="4" data-col="5" data-sizex="1" data-sizey="1">
+          <div data-id="fmtemp" data-view="Sttemp" data-title="Family Room" data-device="Family Room"/>
+        </li>
+
+        <li data-row="4" data-col="6" data-sizex="1" data-sizey="1">
+          <div data-id="lrtemp" data-view="Sttemp" data-title="Living Room" data-device="Thermostat"/>
+        </li>     
+
+        <!-- Navigation -->
+        <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="cpage1-4" data-view="ChangePage" data-icon="fa fa-map-marked-alt" data-title="Traffic" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="traffic"/>
+        </li>
+        <li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="cpage1-2" data-view="ChangePage" data-icon="fab fa-dashcube" data-title="Basement" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="basement"/>
+        </li> 
+        <li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="cpage1-3" data-view="ChangePage" data-icon="fab fa-dashcube" data-title="Outside" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="outside"/>
+        </li>		
+        <!-- Reload -->
+        <li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="reload" data-view="Reload"/>
+        </li>      	  	  		 	
+      </ul>
+    </div>
+
+    <div class="gridster" id="basement">
+      <ul>
+        <!-- Devices -->
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+          <div data-id="basementstairs" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Basement Stairs" data-device="Basement Stairs Lights"/>
+        </li>
+
+        <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+          <div data-id="heaterpower" data-view="Stmeter" data-title="Heater" data-device="Basement Heater Metering Switch" data-min="0" data-max="1000"/>
+        </li>	
+
+        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+          <div data-id="basementlights1" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Basement Lights Set 1" data-device="Basement Lights Set #1"/>
+        </li>
+
+        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+          <div data-id="basementlights2" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Basement Lights Set 2" data-device="Basement Lights Set #2"/>
+        </li>
+
+        <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
+          <div data-id="basementlights3" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Basement Lights Set 3" data-device="Basement Lights Set #3"/>
+        </li>
+
+        <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+          <div data-id="washerpower" data-view="Stmeter" data-title="Washer" data-device="Washer Metering Switch" data-min="0" data-max="1000"/>
+        </li>
+
+        <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+          <div data-id="dryerpower" data-view="Stmeter" data-title="Dryer" data-device="Dryer Metering Switch" data-min="0" data-max="1000"/>
+        </li>
+		
+		<li data-row="1" data-col="5" data-sizex="2" data-sizey="1">
+			<div data-id="thermostattemp" data-view="Stthermostat" data-title="Thermostat" data-device="Thermostat" data-event-click="onClick"></div>
+		</li>
+        <!-- Navigation -->
+        <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="cpage2-1" data-view="ChangePage" data-icon="fa fa-home" data-title="Home" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="main"/>
+        </li>
+        <li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="cpage2-2" data-view="ChangePage" data-icon="fab fa-dashcube" data-title="Basement" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="basement"/>
+        </li> 
+        <li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="cpage2-3" data-view="ChangePage" data-icon="fab fa-dashcube" data-title="Outside" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="outside"/>
+        </li>	
+        <!-- Reload -->
+        <li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="reload" data-view="Reload"/>
+        </li>    
+      </ul>
+    </div>
+
+    <div class="gridster" id="outside">
+      <ul>
+        <!-- Devices -->
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+          <div data-id="garagelights" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Garage" data-device="Garage Lights"/>
+        </li>
+        <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+          <div data-id="porchlights" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Porch" data-device="Porch Lights"/>
+        </li>
+        <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+          <div data-id="patiolight" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Patio" data-device="Patio Light"/>
+        </li>
+
+        <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+          <div data-id="porchoutlet" data-view="Stswitch" data-icon="fa fa-tree" data-title="Porch Outlet" data-device="Porch Outlet"/>
+        </li>
+        <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
+          <div data-id="patiooutlet" data-view="Stswitch" data-icon="fa fa-tree" data-title="Patio Outlet" data-device="Patio Outlet"/>
+        </li>
+
+        <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
+          <div data-id="porchoutletm" data-view="Stmeter" data-icon="tree" data-title="Porch Outlet" data-device="Porch Outlet" data-min="0" data-max="1000"/>
+        </li>
+        <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">
+          <div data-id="patiooutletm" data-view="Stmeter" data-icon="tree" data-title="Patio Outlet" data-device="Patio Outlet" data-min="0" data-max="1000"/>
+        </li>
+
+        <!-- Navigation -->
+        <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="cpage3-1" data-view="ChangePage" data-icon="fa fa-home" data-title="Home" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="main"/>
+        </li>
+        <li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="cpage3-2" data-view="ChangePage" data-icon="fab fa-dashcube" data-title="Basement" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="basement"/>
+        </li> 
+        <li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="cpage3-3" data-view="ChangePage" data-icon="fab fa-dashcube" data-title="Outside" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="outside"/>
+        </li>  	
+        <!-- Reload -->
+        <li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="reload" data-view="Reload"/>
+        </li>    
+      </ul>
+    </div>
+
+    <div class="gridster" id="traffic">
+      <ul>
+        <li data-row="1" data-col="1" data-sizex="6" data-sizey="4">
+          <div data-id="trafficmap" data-view="Trafficmap" data-title="Traffic" data-lat="41.8065365" data-long="-88.0652417" data-zoom="13" />
+        </li>
       
-    </li>
-	 
-   <li data-row="2" data-col="5" data-sizex="2" data-sizey="1">
-      <div data-id="thermostat" data-view="Stthermostat" data-title="Thermostat" data-device="Thermostat" data-event-click="onClick"></div>
-    </li>
-   
-	  
-   <li data-row="2" data-col="7" data-sizex="1" data-sizey="1" onclick="location.href='tasker://Pulse';">
-      <div data-id="spotify" data-view="Spotify" data-icon="fas fa-shield-alt" data-title="ADT Pulse"</div>
-    </li>
-	
-
-    <!-- Row 3 -->
-	  
-    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="frontlight" data-view="Stdimmer" data-icon="far fa-lightbulb" data-title="Front Light" data-device="Front light"></div>
-    </li>  
-
-    <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
-      <div data-id="backlight" data-view="Stdimmer" data-icon="far fa-lightbulb" data-title="Back Light" data-device="Back light"></div>
-    </li>
-
-    <li data-row="3" data-col="5" data-sizex="1" data-sizey="1" onclick="location.href='spotify://app/radio';">
-      <div data-id="spotify" data-view="Spotify" data-icon="fab fa-spotify" data-title="Spotify"</div>
-    </li>
-    
-    <li data-row="3" data-col="6" data-sizex="1" data-sizey="1" onclick="location.href='spotify://app/radio';"> 
-      <div data-id="housemusic" data-view="Stswitchhousemusic" data-icon="music" data-title="House Music" data-device="housemusic"></div>
-    </li>
-    
-    <li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="firetv" data-view="Stswitch" data-icon="fab fa-youtube" data-title="Fire TV" data-device="Fire TV [Harmony Activity]"></div>
-    </li>
-	
-
-    <!-- Row 4 -->
-	  
-  
-    <li data-row="4" data-col="3" data-sizex="2" data-sizey="1">
-      <div data-id="quote" data-view="Quote"></div>
-    </li>
-		  
-     <li data-row="4" data-col="5" data-sizex="1" data-sizey="1">
-      <div data-id="movielights" data-view="Stswitch" data-icon="fas fa-film" data-title="Movie Lights" data-device="TV Lights"></div>
-    </li>
-	  
-    <li data-row="4" data-col="6" data-sizex="1" data-sizey="1">
-      <div data-id="movie" data-view="Stswitch" data-icon="fas fa-tv" data-title="TV/Movies" data-device="TV/Movie/Games [Harmony Activity]"></div>
-    </li>	  
-
-    	
-	  <!-- Navigation -->
-    <li data-row="4" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="cpage1-4" data-view="ChangePage" data-icon="fas fa-home" data-title="Home" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="home"></div>
-    </li>
-	<li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="cpage1-2" data-view="ChangePage" data-icon="fas fa-road" data-title="Traffic" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="traffic"></div>
-    </li> 
-	<li data-row="4" data-col="2" data-sizex="1" data-sizey="1">
-      <div data-id="cpage1-3" data-view="ChangePage" data-icon="fab fa-pagelines" data-title="Outside" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="outside"></div>
-    </li>		
-	  		 	
-  </ul>
-</div>
-
-<div class="gridster" id="traffic">
-  <ul>
-    <!-- Devices -->
-    
-    <li data-row="1" data-col="1" data-sizex="6" data-sizey="4">
-      <div data-id="trafficmap" data-view="Trafficmap" data-title="Traffic" data-lat="38.4684015" data-long="-121.7130422" data-zoom="11" ></div>
-    </li>
-
-    <!-- Navigation -->
-    <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="cpage2-1" data-view="ChangePage" data-icon="fas fa-reply" data-title="Main" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="main"></div>
-    </li>
-	<li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="cpage2-4" data-view="ChangePage" data-icon="fas fa-home" data-title="Home" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="home"></div>
-    </li> 
-	<li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="cpage2-3" data-view="ChangePage" data-icon="fab fa-pagelines" data-title="Outside" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="outside"></div>
-    </li>	
-	<!-- Reload -->
-	<li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="reload" data-view="Reload"></div>
-    </li>    
-  </ul>
-</div>
-
-<div class="gridster" id="outside">
-  <ul>
-	<!-- Devices -->
-	<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="garagelights" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Garage" data-device="Garage Lights"></div>
-    </li>
-	<li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
-      <div data-id="porchlights" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Porch" data-device="Porch Lights"></div>
-    </li>
-      
-    <!-- Navigation -->
-    <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="cpage3-1" data-view="ChangePage" data-icon="fas fa-reply" data-title="Main" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="main"></div>
-    </li>
-	<li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="cpage3-2" data-view="ChangePage" data-icon="fas fa-road" data-title="Traffic" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="traffic"></div>
-    </li> 
-    <li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="cpage3-4" data-view="ChangePage" data-icon="fas fa-home" data-title="Home" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="home"></div>
-    </li>
-<!-- Reload -->
-	<li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="reload" data-view="Reload"></div>
-    </li>    
-  </ul>
-</div>
-
-<div class="gridster" id="home">
-  <ul>  
-   <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">
-      <div data-id="firetv" data-view="Stswitch" data-icon="fab fa-youtube" data-title="Fire TV" data-device="Fire TV [Harmony Activity]"></div>
-    </li>	
-	 
-   <li data-row="1" data-col="6" data-sizex="1" data-sizey="1">
-      <div data-id="movie" data-view="Stswitch" data-icon="fas fa-tv" data-title="TV/Movies" data-device="TV/Movie/Games [Harmony Activity]"></div>
-    </li>	  
-	  
-   <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="livingroom" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Living Room" data-device="living room"></div>
-    </li>
-	 
-   <li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
-      <div data-id="kitchenlights1" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Kitchen Lights" data-device="Kitchen light set1"></div>
-    </li>
-	  
-    <li data-row="2" data-col="3" data-sizex="1" data-sizey="1">
-      <div data-id="hallway" data-view="Stswitch" data-icon="far fa-lightbulb" data-title="Hallway" data-device="Hallway"></div>
-    </li>
-	  
-	
-    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="frontlight" data-view="Stdimmer" data-icon="far fa-lightbulb" data-title="Front Light" data-device="Front light"></div>
-    </li>  
-
-    <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">
-      <div data-id="backlight" data-view="Stdimmer" data-icon="far fa-lightbulb" data-title="Back Light" data-device="Back light"></div>
-    </li>	
-
-    <li data-row="3" data-col="5" data-sizex="1" data-sizey="1" onclick="location.href='tasker://Tinycam';">
-      <div data-id="spotify" data-view="Spotify" data-icon="fas fa-video" data-title="Security"</div>
-    </li>
-	  
-    <li data-row="3" data-col="4" data-sizex="1" data-sizey="1" onclick="location.href='tasker://Pulse';">
-      <div data-id="spotify" data-view="Spotify" data-icon="fas fa-shield-alt" data-title="ADT Pulse"</div>
-    </li>
-	  
-    <!-- Navigation -->
-    <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="cpage4-1" data-view="ChangePage" data-icon="fas fa-reply" data-title="Main" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="main"></div>
-    </li>
-	<li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="cpage4-2" data-view="ChangePage" data-icon="fas fa-road" data-title="Traffic" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="traffic"></div>
-    </li> 
-	<li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="cpage4-3" data-view="ChangePage" data-icon="fab fa-pagelines" data-title="Outside" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="outside"></div>
-    </li>  	
-	<!-- Reload -->
-	<li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="reload" data-view="Reload"></div>
-    </li>    
-  </ul>
-</div>
-
-<div class="gridster" id="weather">
-  <ul>
-    <!-- Devices -->
-    
-    <li data-row="1" data-col="1" data-sizex="6" data-sizey="4">
-      <div data-id="weeklyweather" data-view="WeeklyWeather"></div>
-    	<i class="fa fa-cloud fa-2x icon-background"></i>
-    </li>
-	  
-    <!-- Navigation -->
-    <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="cpage5-1" data-view="ChangePage" data-icon="fas fa-reply" data-title="Main" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="main"></div>
-    </li>
-	<li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="cpage5-4" data-view="ChangePage" data-icon="fas fa-home" data-title="Home" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="home"></div>
-    </li> 
-	<li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="cpage5-3" data-view="ChangePage" data-icon="fab fa-pagelines" data-title="Outside" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="outside"></div>
-    </li>	
-	<!-- Reload -->
-	<li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
-      <div data-id="reload" data-view="Reload"></div>
-    </li>    
-  </ul>
-</div>
-<div class="gridster" id="radar">
-  <ul>
-    <!-- Devices -->
-    
-    <li data-row="1" data-col="1" data-sizex="7" data-sizey="4">
-      <div data-id="radar" data-view="Radar" data-image=""></div>
-    </li>
-  </ul>
-</div>
-    
+        <!-- Navigation -->
+        <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="cpage3-1" data-view="ChangePage" data-icon="fa fa-home" data-title="Home" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="main"/>
+        </li>
+        <li data-row="2" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="cpage3-2" data-view="ChangePage" data-icon="fab fa-dashcube" data-title="Basement" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="basement"/>
+        </li> 
+        <li data-row="3" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="cpage3-3" data-view="ChangePage" data-icon="fab fa-dashcube" data-title="Outside" data-stagger="false" data-fasttransition="true" data-event-click="onClick" data-page="outside"/>
+        </li>  	
+        <!-- Reload -->
+        <li data-row="4" data-col="7" data-sizex="1" data-sizey="1">
+          <div data-id="reload" data-view="Reload"/>
+        </li>
+      </ul>
+    </div>

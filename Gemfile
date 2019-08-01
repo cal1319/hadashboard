@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.1'
 
-gem 'dashing',  '>=1.3.6'
+gem 'smashing',  '>=1.1.0'
 gem 'thor'
 
 # Authentication
