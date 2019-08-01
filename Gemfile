@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.1'
+ruby '3.0.4'
 
 gem 'dashing',  '>=1.3.6'
 gem 'thor'
